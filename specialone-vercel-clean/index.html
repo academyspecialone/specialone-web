@@ -182,9 +182,16 @@ document.addEventListener("tally-form-submitted", function(e) {
 </div>
 <div class="cookie"><strong>Cookies</strong><p>Utilizamos cookies técnicas y de análisis para mejorar la experiencia de navegación. Puedes aceptar o rechazar su uso.</p><div class="cookie-actions"><button class="accept" data-cookie="accepted">Aceptar</button><button class="reject" data-cookie="rejected">Rechazar</button><a class="btn secondary" href="cookies.html">Ver política</a></div></div>
 <script src="assets/script.js?v=6.1"></script>
-<div id="ai-chat">
-  <div id="chat-header">💬 AI Assistant</div>
+<button id="chat-toggle">💬</button>
+
+<div id="ai-chat" class="chat-closed">
+  <div id="chat-header">
+    <span>Special One Assistant</span>
+    <button id="chat-close">−</button>
+  </div>
+
   <div id="chat-messages"></div>
+
   <div id="chat-input">
     <input id="chat-text" placeholder="Escribe tu pregunta..." />
     <button id="chat-send">Enviar</button>
@@ -192,113 +199,203 @@ document.addEventListener("tally-form-submitted", function(e) {
 </div>
 
 <style>
+#chat-toggle{
+position:fixed;
+right:22px;
+bottom:24px;
+width:62px;
+height:62px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.18);
+background:linear-gradient(135deg,#caa64b,#f1d27a);
+color:#111;
+font-size:25px;
+font-weight:800;
+cursor:pointer;
+z-index:99999;
+box-shadow:0 18px 45px rgba(0,0,0,.35);
+}
+
 #ai-chat{
 position:fixed;
-bottom:90px;
-right:20px;
-width:340px;
-height:480px;
-background:#111;
-border-radius:20px;
+right:22px;
+bottom:98px;
+width:360px;
+height:500px;
+background:#0d0d0d;
+border:1px solid rgba(202,166,75,.35);
+border-radius:24px;
 overflow:hidden;
-box-shadow:0 10px 35px rgba(0,0,0,.35);
-z-index:9999;
+box-shadow:0 24px 70px rgba(0,0,0,.55);
+z-index:99999;
 display:flex;
 flex-direction:column;
-font-family:Inter,sans-serif;
+font-family:Inter,Arial,sans-serif;
+transition:.25s ease;
+}
+
+#ai-chat.chat-closed{
+opacity:0;
+transform:translateY(18px) scale(.96);
+pointer-events:none;
 }
 
 #chat-header{
-background:#caa64b;
-color:#111;
-padding:14px;
-font-weight:700;
+background:linear-gradient(135deg,#161616,#050505);
+color:#fff;
+padding:16px 18px;
+font-weight:800;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid rgba(202,166,75,.25);
+}
+
+#chat-header span{
+color:#f1d27a;
+letter-spacing:.2px;
+}
+
+#chat-close{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+color:#fff;
+width:32px;
+height:32px;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
 }
 
 #chat-messages{
 flex:1;
-padding:15px;
+padding:16px;
 overflow:auto;
 color:white;
 font-size:14px;
+line-height:1.45;
 }
 
 .chat-msg{
 margin-bottom:12px;
-padding:10px;
-border-radius:12px;
+padding:11px 13px;
+border-radius:14px;
+max-width:88%;
 }
 
 .user{
-background:#222;
+background:#caa64b;
+color:#111;
+margin-left:auto;
+font-weight:600;
 }
 
 .bot{
-background:#1a1a1a;
-border:1px solid #333;
+background:#171717;
+border:1px solid rgba(255,255,255,.08);
+color:#f5f5f5;
 }
 
 #chat-input{
 display:flex;
-border-top:1px solid #333;
+gap:8px;
+padding:12px;
+border-top:1px solid rgba(255,255,255,.08);
+background:#111;
 }
 
 #chat-text{
 flex:1;
-padding:12px;
-border:none;
+padding:13px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.12);
 outline:none;
-background:#181818;
+background:#1a1a1a;
 color:white;
 }
 
 #chat-send{
 background:#caa64b;
+color:#111;
 border:none;
-padding:12px 18px;
-font-weight:700;
+padding:12px 16px;
+border-radius:999px;
+font-weight:800;
 cursor:pointer;
+}
+
+@media(max-width:600px){
+#ai-chat{
+right:12px;
+left:12px;
+bottom:92px;
+width:auto;
+height:72vh;
+}
+#chat-toggle{
+right:16px;
+bottom:18px;
+}
 }
 </style>
 
 <script>
+const chatBox=document.getElementById("ai-chat");
+const toggle=document.getElementById("chat-toggle");
+const closeBtn=document.getElementById("chat-close");
 const messages=document.getElementById("chat-messages");
 const input=document.getElementById("chat-text");
 const send=document.getElementById("chat-send");
 
-function addMessage(text,type){
-const div=document.createElement("div");
-div.className="chat-msg "+type;
-div.innerText=text;
-messages.appendChild(div);
-messages.scrollTop=messages.scrollHeight;
-}
-
-send.onclick=async()=>{
-const text=input.value.trim();
-if(!text)return;
-
-addMessage(text,"user");
-input.value="";
-
-const lang=document.documentElement.lang==="en"?"en":"es";
-
-const res=await fetch("/api/chat",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-message:text,
-lang
-})
-});
-
-const data=await res.json();
-
-addMessage(data.reply || "Error","bot");
+toggle.onclick=()=>{
+  chatBox.classList.remove("chat-closed");
+  input.focus();
 };
 
-addMessage("👋 Hola, soy el asistente IA de Special One Academy. ¿En qué puedo ayudarte?","bot");
+closeBtn.onclick=()=>{
+  chatBox.classList.add("chat-closed");
+};
+
+function addMessage(text,type){
+  const div=document.createElement("div");
+  div.className="chat-msg "+type;
+  div.innerText=text;
+  messages.appendChild(div);
+  messages.scrollTop=messages.scrollHeight;
+}
+
+async function sendChat(){
+  const text=input.value.trim();
+  if(!text)return;
+
+  addMessage(text,"user");
+  input.value="";
+
+  addMessage("Pensando...","bot");
+  const loading=messages.lastChild;
+
+  const lang=document.documentElement.lang==="en"?"en":"es";
+
+  try{
+    const res=await fetch("/api/chat",{
+      method:"POST",
+      headers:{ "Content-Type":"application/json" },
+      body:JSON.stringify({ message:text, lang })
+    });
+
+    const data=await res.json();
+    loading.innerText=data.reply || "No he podido responder ahora mismo. Puedes contactar con Special One Academy por WhatsApp.";
+  }catch(e){
+    loading.innerText="Ahora mismo no puedo responder. Contacta con Special One Academy por WhatsApp.";
+  }
+}
+
+send.onclick=sendChat;
+
+input.addEventListener("keydown",function(e){
+  if(e.key==="Enter") sendChat();
+});
+
+addMessage("👋 Hola, soy el asistente IA de Special One Academy. Puedo ayudarte con programas, tecnificación, clinics, porteros, experiencia internacional e inscripciones.","bot");
 </script>
 </body></html>
