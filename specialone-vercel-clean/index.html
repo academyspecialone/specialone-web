@@ -182,4 +182,123 @@ document.addEventListener("tally-form-submitted", function(e) {
 </div>
 <div class="cookie"><strong>Cookies</strong><p>Utilizamos cookies técnicas y de análisis para mejorar la experiencia de navegación. Puedes aceptar o rechazar su uso.</p><div class="cookie-actions"><button class="accept" data-cookie="accepted">Aceptar</button><button class="reject" data-cookie="rejected">Rechazar</button><a class="btn secondary" href="cookies.html">Ver política</a></div></div>
 <script src="assets/script.js?v=6.1"></script>
+<div id="ai-chat">
+  <div id="chat-header">💬 AI Assistant</div>
+  <div id="chat-messages"></div>
+  <div id="chat-input">
+    <input id="chat-text" placeholder="Escribe tu pregunta..." />
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+
+<style>
+#ai-chat{
+position:fixed;
+bottom:90px;
+right:20px;
+width:340px;
+height:480px;
+background:#111;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 35px rgba(0,0,0,.35);
+z-index:9999;
+display:flex;
+flex-direction:column;
+font-family:Inter,sans-serif;
+}
+
+#chat-header{
+background:#caa64b;
+color:#111;
+padding:14px;
+font-weight:700;
+}
+
+#chat-messages{
+flex:1;
+padding:15px;
+overflow:auto;
+color:white;
+font-size:14px;
+}
+
+.chat-msg{
+margin-bottom:12px;
+padding:10px;
+border-radius:12px;
+}
+
+.user{
+background:#222;
+}
+
+.bot{
+background:#1a1a1a;
+border:1px solid #333;
+}
+
+#chat-input{
+display:flex;
+border-top:1px solid #333;
+}
+
+#chat-text{
+flex:1;
+padding:12px;
+border:none;
+outline:none;
+background:#181818;
+color:white;
+}
+
+#chat-send{
+background:#caa64b;
+border:none;
+padding:12px 18px;
+font-weight:700;
+cursor:pointer;
+}
+</style>
+
+<script>
+const messages=document.getElementById("chat-messages");
+const input=document.getElementById("chat-text");
+const send=document.getElementById("chat-send");
+
+function addMessage(text,type){
+const div=document.createElement("div");
+div.className="chat-msg "+type;
+div.innerText=text;
+messages.appendChild(div);
+messages.scrollTop=messages.scrollHeight;
+}
+
+send.onclick=async()=>{
+const text=input.value.trim();
+if(!text)return;
+
+addMessage(text,"user");
+input.value="";
+
+const lang=document.documentElement.lang==="en"?"en":"es";
+
+const res=await fetch("/api/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+message:text,
+lang
+})
+});
+
+const data=await res.json();
+
+addMessage(data.reply || "Error","bot");
+};
+
+addMessage("👋 Hola, soy el asistente IA de Special One Academy. ¿En qué puedo ayudarte?","bot");
+</script>
 </body></html>
