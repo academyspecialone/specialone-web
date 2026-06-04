@@ -398,4 +398,131 @@ input.addEventListener("keydown",function(e){
 
 addMessage("👋 Hola, soy el asistente IA de Special One Academy. Puedo ayudarte con programas, tecnificación, clinics, porteros, experiencia internacional e inscripciones.","bot");
 </script>
+  <div id="preseason-floating-banner">
+  <button id="preseason-close" aria-label="Cerrar">×</button>
+
+  <div class="preseason-content">
+    <div class="preseason-label">⚽ INSCRIPCIONES ABIERTAS</div>
+    <div class="preseason-title">SPECIAL ONE PRE PRETEMPORADA 2026</div>
+    <div class="preseason-info">
+      📍 Club Río Grande · Mairena del Aljarafe · 📅 29 junio - 31 julio · 💰 Packs desde 99€
+    </div>
+  </div>
+
+  <button class="preseason-btn" onclick="openTally('XxG5eO')">
+    RESERVA TU PLAZA →
+  </button>
+</div>
+
+<style>
+#preseason-floating-banner{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translate(-50%,-160%);
+  width:min(94%,1050px);
+  z-index:999999;
+  background:linear-gradient(135deg,#0b0b0b,#201806);
+  border:1px solid rgba(241,194,50,.65);
+  box-shadow:0 25px 90px rgba(0,0,0,.65),0 0 50px rgba(241,194,50,.25);
+  border-radius:24px;
+  padding:18px 22px;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  transition:.7s cubic-bezier(.2,.9,.2,1);
+}
+
+#preseason-floating-banner.show{
+  transform:translate(-50%,0);
+  animation:pulseBanner 2.4s ease-in-out infinite;
+}
+
+.preseason-content{
+  flex:1;
+}
+
+.preseason-label{
+  color:#f1c232;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  margin-bottom:6px;
+}
+
+.preseason-title{
+  font-size:22px;
+  font-weight:900;
+  line-height:1.1;
+}
+
+.preseason-info{
+  margin-top:6px;
+  color:rgba(255,255,255,.82);
+  font-size:14px;
+  line-height:1.4;
+}
+
+.preseason-btn{
+  background:#f1c232;
+  color:#111;
+  border:0;
+  border-radius:999px;
+  padding:14px 22px;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+  box-shadow:0 0 30px rgba(241,194,50,.45);
+}
+
+#preseason-close{
+  position:absolute;
+  right:12px;
+  top:8px;
+  background:transparent;
+  border:0;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  opacity:.8;
+}
+
+@keyframes pulseBanner{
+  0%,100%{box-shadow:0 25px 90px rgba(0,0,0,.65),0 0 35px rgba(241,194,50,.22);}
+  50%{box-shadow:0 25px 100px rgba(0,0,0,.72),0 0 70px rgba(241,194,50,.42);}
+}
+
+@media(max-width:760px){
+  #preseason-floating-banner{
+    top:12px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    padding:18px;
+  }
+
+  .preseason-title{
+    font-size:18px;
+  }
+
+  .preseason-btn{
+    width:100%;
+  }
+}
+</style>
+
+<script>
+setTimeout(function(){
+  var banner = document.getElementById("preseason-floating-banner");
+  if(banner && !localStorage.getItem("preseasonBannerClosed")){
+    banner.classList.add("show");
+  }
+}, 900);
+
+document.getElementById("preseason-close").onclick = function(){
+  document.getElementById("preseason-floating-banner").classList.remove("show");
+  localStorage.setItem("preseasonBannerClosed","1");
+};
+</script>
 </body></html>
