@@ -8,19 +8,21 @@ window.openTally=openTally;
 $('.chat-launch')?.addEventListener('click',()=>$('.chatbot').classList.toggle('open'));
 const answers={
   es:{
-    programas:'Tenemos tres líneas: Special One Training, Special One Experience e International Experience. Puedes solicitar información desde cada programa o hablar por WhatsApp.',
+    programas:'Tenemos cuatro programas: Special One Training, Special One Experience, Special One International Experience y Special One Individual Training. Puedes solicitar información desde cada programa o hablar por WhatsApp.',
     horarios:'Los horarios dependen de categoría, nivel, posición y disponibilidad del grupo. Te orientamos personalmente para colocar al jugador/a donde mejor encaje.',
     ubicacion:'La sede principal de entrenamientos es Club Río Grande, Mairena del Aljarafe, Sevilla.',
     international:'International Experience es una experiencia personalizada en Sevilla para futbolistas internacionales, con sesiones individuales, entrenamientos grupales y partido en ligas privadas según el paquete.',
     clinics:'Los clinics y eventos se activan durante vacaciones, puentes, festivos o fechas especiales. Cuando haya convocatoria abriremos inscripción.',
+    individual:'Special One Individual Training son entrenamientos totalmente personalizados para jugadores y porteros que buscan una mejora específica, con sesiones de 60 o 90 minutos según disponibilidad.',
     whatsapp:'Puedes escribirnos directamente por WhatsApp en el botón verde o desde aquí: +34 614 80 60 29.'
   },
   en:{
-    programas:'We offer three programs: Special One Training, Special One Experience and International Experience. You can request information from each program or contact us on WhatsApp.',
+    programas:'We offer four programs: Special One Training, Special One Experience, Special One International Experience and Special One Individual Training. You can request information from each program or contact us on WhatsApp.',
     horarios:'Schedules depend on the player category, level, position and group availability. We will guide you personally to find the best option.',
     ubicacion:'Our main training venue is Club Río Grande, Mairena del Aljarafe, Seville.',
     international:'International Experience is a personalized football experience in Seville for international players, including individual sessions, group training and a private league match depending on the package.',
     clinics:'Clinics and events open during holidays, long weekends, festive periods or special dates. Registrations will open when a new event is active.',
+    individual:'Special One Individual Training offers fully personalized sessions for players and goalkeepers who need specific improvement, with 60 or 90 minute sessions depending on availability.',
     whatsapp:'You can contact us directly on WhatsApp using the green button or here: +34 614 80 60 29.'
   }
 };
@@ -55,7 +57,7 @@ const SOA_I18N = {
     aboutTags:['Trabajo individualizado','Exigencia adaptada','Entorno cercano','Aprendizaje desde la experiencia'],
     programsEyebrow:'Programas',
     programsTitle:'Elige tu programa',
-    programsLead:'Tres formas de vivir el fútbol con Special One Academy: tecnificación permanente, clinics/eventos e International Experience.',
+    programsLead:'Cuatro formas de vivir el fútbol con Special One Academy: tecnificación permanente, clinics formativos, experiencia internacional y entrenamiento individual.',
     programCards:[
       {
         title:'Special One<br>Training',
@@ -74,6 +76,12 @@ const SOA_I18N = {
         text:'Experiencia formativa en Sevilla para futbolistas internacionales que quieren entrenar, competir y conocer el fútbol español desde dentro.',
         list:['Experiencia personalizada','Sesiones individuales y grupales','Partido en ligas privadas'],
         btns:['Formulario International →','Hablar con nosotros']
+      },
+      {
+        title:'Special One<br>Individual Training',
+        text:'Entrenamientos totalmente personalizados para jugadores y porteros que buscan una mejora específica.',
+        list:['Entrenamientos 100% personalizados','Trabajo específico por posición','Sesiones de 60 o 90 minutos'],
+        btns:['Formulario Individual →','Consultar disponibilidad']
       }
     ],
     values:[
@@ -99,14 +107,14 @@ const SOA_I18N = {
     contactLead:'Cuéntanos qué programa te interesa y te orientamos sobre la mejor opción para el jugador.',
     formLabels:['Nombre','Teléfono','Email','Programa','Mensaje'],
     formPlaceholders:['Tu nombre','+34...','tu@email.com','Cuéntanos edad, categoría y qué necesitas.'],
-    formOptions:['Special One Training','Special One Experience','International Experience','Consulta general'],
+    formOptions:['Special One Training','Special One Experience','Special One International Experience','Special One Individual Training','Consulta general'],
     formBtn:'Enviar consulta por WhatsApp →',
     footer:'© Special One Academy · Asociación Deportiva Andalucía Activa',
     legal:['Aviso legal','Privacidad','Cookies','Términos'],
     chatbotTitle:'¡Hola! Soy Special One 👋',
     chatbotSub:'Te ayudo a resolver dudas rápidas',
     chatbotIntro:'¿Sobre qué necesitas información?',
-    quick:['Programas disponibles','Horarios y grupos','Ubicación','International Experience','Clinics y eventos','Hablar por WhatsApp'],
+    quick:['Programas disponibles','Horarios y grupos','Ubicación','Individual Training','International Experience','Clinics y eventos','Hablar por WhatsApp'],
     chatPlaceholder:'Escribe tu mensaje...',
     cookiesTitle:'Cookies',
     cookiesText:'Utilizamos cookies técnicas y de análisis para mejorar la experiencia de navegación. Puedes aceptar o rechazar su uso.',
@@ -134,7 +142,7 @@ const SOA_I18N = {
     aboutTags:['Individualized work','Adapted intensity','Close environment','Learning through experience'],
     programsEyebrow:'Programs',
     programsTitle:'Choose your program',
-    programsLead:'Three ways to experience football with Special One Academy: permanent training, clinics/events and International Experience.',
+    programsLead:'Four ways to experience football with Special One Academy: permanent training, clinics, international experience and individual training.',
     programCards:[
       {
         title:'Special One<br>Training',
@@ -153,6 +161,12 @@ const SOA_I18N = {
         text:'Football training experience in Seville for international players who want to train, compete and discover Spanish football from the inside.',
         list:['Personalized experience','Individual and group sessions','Private league match'],
         btns:['International Form →','Talk to us']
+      },
+      {
+        title:'Special One<br>Individual Training',
+        text:'Fully personalized training sessions for players and goalkeepers looking for specific improvement.',
+        list:['100% personalized training','Position-specific work','60 or 90 minute sessions'],
+        btns:['Individual Form →','Check availability']
       }
     ],
     values:[
@@ -178,14 +192,14 @@ const SOA_I18N = {
     contactLead:'Tell us which program you are interested in and we will guide you toward the best option for the player.',
     formLabels:['Name','Phone','Email','Program','Message'],
     formPlaceholders:['Your name','+34...','your@email.com','Tell us the player age, category and what you need.'],
-    formOptions:['Special One Training','Special One Experience','International Experience','General enquiry'],
+    formOptions:['Special One Training','Special One Experience','Special One International Experience','Special One Individual Training','General enquiry'],
     formBtn:'Send enquiry via WhatsApp →',
     footer:'© Special One Academy · Asociación Deportiva Andalucía Activa',
     legal:['Legal notice','Privacy','Cookies','Terms'],
     chatbotTitle:'Hi! I’m Special One 👋',
     chatbotSub:'I can help you with quick questions',
     chatbotIntro:'What do you need information about?',
-    quick:['Available programs','Schedules and groups','Location','International Experience','Clinics and events','Talk on WhatsApp'],
+    quick:['Available programs','Schedules and groups','Location','Individual Training','International Experience','Clinics and events','Talk on WhatsApp'],
     chatPlaceholder:'Write your message...',
     cookiesTitle:'Cookies',
     cookiesText:'We use technical and analytics cookies to improve your browsing experience. You can accept or reject their use.',
@@ -259,4 +273,14 @@ document.addEventListener('DOMContentLoaded',()=>{
     const next=(localStorage.getItem('soaLang') || 'es') === 'es' ? 'en' : 'es';
     applySOALanguage(next);
   });
+});
+
+setTimeout(function(){
+  const banner = document.getElementById('season-floating-banner');
+  if (banner && !localStorage.getItem('seasonBannerClosedV14')) banner.classList.add('show');
+}, 900);
+
+document.getElementById('season-close')?.addEventListener('click', function(){
+  document.getElementById('season-floating-banner')?.classList.remove('show');
+  localStorage.setItem('seasonBannerClosedV14', '1');
 });
