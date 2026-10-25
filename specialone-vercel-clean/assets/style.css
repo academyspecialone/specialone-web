@@ -54,3 +54,31 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 #season-floating-banner.show{transform:translate(-50%,0)}.season-content{flex:1}.season-label{color:#f1c232;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.season-title{font-size:22px;font-weight:900;line-height:1.1;text-transform:uppercase}.season-info{margin-top:6px;color:rgba(255,255,255,.82);font-size:14px;line-height:1.4}.season-btn{background:#f1c232;color:#111;border:0;border-radius:999px;padding:14px 22px;font-weight:900;cursor:pointer;white-space:nowrap;box-shadow:0 0 30px rgba(241,194,50,.38)}#season-close{position:absolute;right:12px;top:8px;background:transparent;border:0;color:white;font-size:24px;cursor:pointer;opacity:.8}
 @media (max-width:980px){#programas .program-grid{grid-template-columns:1fr !important}#programas .program-img{height:300px !important;min-height:300px !important}}
 @media (max-width:640px){#programas .program-copy{padding:24px !important}#programas .program-img{height:235px !important;min-height:235px !important}#programas .program-actions{flex-direction:column !important}#programas .program-actions .small-btn{width:100% !important;text-align:center !important}#season-floating-banner{top:12px;flex-direction:column;align-items:flex-start;gap:12px;padding:18px}.season-title{font-size:18px}.season-btn{width:100%}}
+
+/* Special One Manager: preview branch, not activated in production. */
+.nav{width:min(1440px,calc(100% - 44px));gap:16px}
+.nav .brand,.nav-actions{flex-shrink:0}
+.nav .links{gap:18px}
+.manager-desktop{white-space:nowrap;font-size:14px;padding:15px 18px;min-height:48px}
+.manager-mobile{display:none}
+.manager-footer{color:var(--gold);font-weight:800}
+.manager-desktop:focus-visible,.manager-mobile:focus-visible,.manager-footer:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media(max-width:1180px){
+  .nav{height:auto;min-height:66px;flex-wrap:wrap;gap:12px;padding:12px 14px;border-radius:28px}
+  .manager-desktop{display:none}
+  .manager-mobile{display:flex;flex:0 0 100%;width:100%;min-height:48px;padding:12px;white-space:normal;text-align:center;font-size:14px}
+  .hero{padding-top:180px}
+}
+@media(max-width:860px){
+  .nav .brand{gap:8px}
+  .nav .brand span{font-size:16px}
+  .nav-actions{gap:8px}
+  .nav.open .links{top:calc(100% + 8px)}
+}
+@media(max-width:360px){
+  .nav{width:calc(100% - 24px);padding:10px;gap:10px}
+  .nav .brand span{font-size:14px}
+  .nav .brand-mark{width:34px;height:34px}
+  .nav .lang{padding:10px}
+  .nav .mobile-toggle{padding:10px}
+}
