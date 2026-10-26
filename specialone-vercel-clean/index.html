@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=14.1-manager">
+<link rel="stylesheet" href="assets/style.css?v=15-launch">
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 
@@ -62,7 +62,7 @@ gtag("config", "G-HH45EVVGY7");
 </script>
 </head>
 
-<body>
+<body class="launch-home">
 <header class="nav">
   <a href="#" class="brand">
     <span class="brand-mark">SO</span>
@@ -79,32 +79,26 @@ gtag("config", "G-HH45EVVGY7");
 
   <div class="nav-actions">
     <button class="lang" type="button" aria-label="Cambiar idioma">ES⌄</button>
-    <a class="btn manager-desktop" href="special-one-manager.html">Special One Manager</a>
+    <a class="btn manager-desktop" href="#manager">Special One Manager</a>
     <a class="nav-cta" href="#contacto">Contacta con nosotros</a>
-    <button class="mobile-toggle" type="button">☰</button>
+    <button class="mobile-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </div>
-  <a class="btn manager-mobile" href="special-one-manager.html">Special One Manager</a>
+  <a class="btn manager-mobile" href="#manager">Special One Manager</a>
 </header>
 
-<section class="hero">
-  <div class="hero-bg">
-    <img src="assets/img/hero.jpg" alt="Jugador Special One Academy entrenando">
-  </div>
-
+<section class="hero" aria-labelledby="hero-title">
   <div class="container hero-grid">
-    <div class="hero-copy reveal on">
-      <div class="eyebrow">Academia de tecnificación en Sevilla</div>
-      <h1>Formamos jugadores.<br><span class="gold">Creamos futuro.</span></h1>
-      <p>En Special One Academy ayudamos a futbolistas y porteros a mejorar su juego con entrenamientos profesionales, metodología propia y entrenadores cualificados.</p>
-
-      <div class="hero-actions">
-        <a class="btn" href="#programas">Conoce nuestros programas →</a>
-        <a class="btn secondary" href="#quienes">Quiénes somos ▶</a>
-      </div>
+    <div class="hero-copy">
+      <div class="eyebrow">ACADEMIA DE TECNIFICACIÓN · SEVILLA</div>
+      <h1 id="hero-title">Entrena con nosotros.<br><span class="gold">Reserva desde tu móvil.</span></h1>
+      <p>Mejora tu fútbol con entrenadores cualificados. Instala gratis Special One Manager para consultar sesiones y gestionar las reservas de tu familia.</p>
+      <div class="hero-actions"><a class="btn" href="#instalar-app">INSTALA LA APP GRATIS ↗</a><a class="btn secondary" href="#programas">DESCUBRE LOS PROGRAMAS ↓</a></div>
+      <div class="launch-hero-foot"><span data-es="Jugadores y porteros" data-en="Players and goalkeepers">Jugadores y porteros</span><span data-es="Club Río Grande · Mairena del Aljarafe" data-en="Club Río Grande · Mairena del Aljarafe">Club Río Grande · Mairena del Aljarafe</span></div>
     </div>
-
-    <div class="hero-panel reveal">
-      <div class="hero-feature">
+    <div class="launch-visual"><img src="assets/img/hero.jpg" alt="Jugador de Special One Academy durante un entrenamiento" fetchpriority="high"><div class="launch-photo-label"><span>WORK TO TALENT</span><strong data-es="El siguiente paso empieza en el campo." data-en="Your next step starts on the pitch.">El siguiente paso empieza en el campo.</strong></div></div>
+  </div>
+</section>
+<div class="launch-trust container">      <div class="hero-feature">
         <div class="icon-box">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M2 21v-2a4 4 0 0 1 3-3.87"/></svg>
         </div>
@@ -133,17 +127,25 @@ gtag("config", "G-HH45EVVGY7");
           <p>Atención individual y máxima calidad.</p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="scroll-dots"><span></span><span></span><span></span></div>
-</section>
+</div>
 
 <main>
+<section id="manager" class="launch-manager" aria-labelledby="app-heading">
+ <div class="container launch-manager-grid">
+  <div class="launch-app-copy"><div class="launch-status" data-es="YA DISPONIBLE · ACCESO GRATUITO" data-en="AVAILABLE NOW · FREE ACCESS">YA DISPONIBLE · ACCESO GRATUITO</div><div class="eyebrow">SPECIAL ONE MANAGER</div><h2 id="app-heading" data-es="Más fútbol.<br>Menos gestiones." data-en="More football.<br>Less admin." data-rich>Más fútbol.<br>Menos gestiones.</h2><p class="launch-app-lead" data-es="Tu academia, también en tu móvil. Consulta los entrenamientos y organiza las reservas de tus futbolistas desde un mismo espacio." data-en="Your academy, on your phone. Check training sessions and manage your players’ bookings in one place.">Tu academia, también en tu móvil. Consulta los entrenamientos y organiza las reservas de tus futbolistas desde un mismo espacio.</p>
+  <div class="launch-app-functions"><article><span>01</span><div><h3 data-es="Calendario" data-en="Calendar">Calendario</h3><p data-es="Consulta las sesiones y sus horarios." data-en="Check sessions and their times.">Consulta las sesiones y sus horarios.</p></div></article><article><span>02</span><div><h3 data-es="Programas" data-en="Programs">Programas</h3><p data-es="Encuentra la información de cada actividad." data-en="Find information about each activity.">Encuentra la información de cada actividad.</p></div></article><article><span>03</span><div><h3 data-es="Reservas" data-en="Bookings">Reservas</h3><p data-es="Solicita plaza y sigue su confirmación." data-en="Request a place and track its confirmation.">Solicita plaza y sigue su confirmación.</p></div></article></div>
+  <div class="launch-app-actions"><a class="btn" href="#instalar-app" data-es="INSTÁLALA GRATIS EN TU MÓVIL ↗" data-en="INSTALL IT ON YOUR PHONE FOR FREE ↗">INSTÁLALA GRATIS EN TU MÓVIL ↗</a><a class="launch-text-link" href="special-one-manager.html" data-es="Conoce Special One Manager →" data-en="More about Special One Manager →">Conoce Special One Manager →</a></div>
+  <p class="launch-booking-note" data-es="Solicitar plaza no equivale a tener una reserva confirmada. Comprueba el estado en la aplicación." data-en="A request is not a confirmed booking. Check its status in the app.">Solicitar plaza no equivale a tener una reserva confirmada. Comprueba el estado en la aplicación.</p></div>
+  <figure class="launch-film"><video controls playsinline preload="none" poster="assets/manager-poster.jpg" aria-label="Vídeo de presentación de Special One Manager"><source src="assets/special-one-manager.mp4" type="video/mp4">Tu navegador no permite reproducir este vídeo.</video><figcaption data-es="Así es Special One Manager · 15 segundos" data-en="Meet Special One Manager · 15 seconds">Así es Special One Manager · 15 segundos</figcaption></figure>
+ </div>
+ <div class="container launch-install" id="instalar-app"><div class="launch-install-intro"><div class="eyebrow" data-es="Llévala contigo" data-en="Take it with you">Llévala contigo</div><h2 data-es="Tu próximo entreno.<br>A un toque." data-en="Your next session.<br>One tap away." data-rich>Tu próximo entreno.<br>A un toque.</h2><p data-es="Añade la aplicación a tu pantalla de inicio desde el navegador. Sin buscarla en una tienda de aplicaciones." data-en="Add the app to your home screen from your browser. No need to find it in an app store.">Añade la aplicación a tu pantalla de inicio desde el navegador. Sin buscarla en una tienda de aplicaciones.</p></div>
+ <div class="launch-install-steps"><details open><summary>iPhone <span>Safari ↗</span></summary><ol><li data-es="Abre la aplicación en Safari." data-en="Open the app in Safari.">Abre la aplicación en Safari.</li><li data-es="Pulsa Compartir y Añadir a pantalla de inicio." data-en="Tap Share, then Add to Home Screen.">Pulsa Compartir y Añadir a pantalla de inicio.</li><li data-es="Activa Abrir como app web si aparece y pulsa Añadir." data-en="Turn on Open as Web App if shown, then tap Add.">Activa Abrir como app web si aparece y pulsa Añadir.</li></ol></details><details><summary>Android <span>Chrome ↗</span></summary><ol><li data-es="Abre la aplicación en Chrome." data-en="Open the app in Chrome.">Abre la aplicación en Chrome.</li><li data-es="Abre el menú de tres puntos y elige Instalar o Añadir a pantalla de inicio." data-en="Open the three-dot menu and choose Install or Add to Home Screen.">Abre el menú de tres puntos y elige Instalar o Añadir a pantalla de inicio.</li><li data-es="Confirma la instalación o la creación del acceso." data-en="Confirm installation or add the shortcut.">Confirma la instalación o la creación del acceso.</li></ol></details><button class="btn launch-access" disabled type="button" aria-describedby="preview-access-note" data-es="ACCEDER A LA APLICACIÓN ↗" data-en="OPEN THE APP ↗">ACCEDER A LA APLICACIÓN ↗</button><small id="preview-access-note" data-es="Acceso desactivado en esta vista previa. Las opciones de instalación varían según el navegador." data-en="App access is disabled in this preview. Installation options vary by browser.">Acceso desactivado en esta vista previa. Las opciones de instalación varían según el navegador.</small></div></div>
+</section>
+
 <section id="quienes" class="section">
   <div class="container about-wrap">
     <div class="media-card reveal">
-      <img src="assets/img/about.jpg" alt="Entrenamiento en grupo Special One Academy">
+      <img loading="lazy" decoding="async" src="assets/img/about.jpg" alt="Entrenamiento en grupo Special One Academy">
       <div class="media-caption">
         <span class="pill">Formación real</span>
         <span class="pill">Trabajo cercano</span>
@@ -177,6 +179,17 @@ gtag("config", "G-HH45EVVGY7");
       <p class="lead">Cuatro formas de vivir el fútbol con Special One Academy: tecnificación permanente, entrenamientos individuales, clinics formativos e International Experience.</p>
     </div>
 
+<div id="season-floating-banner">
+  <button id="season-close" aria-label="Cerrar">×</button>
+
+  <div class="season-content">
+    <div class="season-label">INSCRIPCIONES ABIERTAS</div>
+    <div class="season-title">SPECIAL ONE TRAINING</div>
+    <div class="season-info">Tecnificación durante la temporada · Grupos reducidos · Club Río Grande, Mairena del Aljarafe</div>
+  </div>
+
+  <button class="season-btn" onclick="openTally('NpMjqB')">Solicitar plaza →</button>
+</div>
     <div class="program-grid">
       <article class="program-card reveal">
         <div class="program-copy">
@@ -203,7 +216,7 @@ gtag("config", "G-HH45EVVGY7");
         </div>
 
         <div class="program-img">
-          <img src="assets/img/training.png?v=14.0" alt="Special One Training">
+          <img loading="lazy" decoding="async" src="assets/img/training.png?v=14.0" alt="Special One Training">
         </div>
       </article>
 
@@ -233,7 +246,7 @@ gtag("config", "G-HH45EVVGY7");
         </div>
 
         <div class="program-img">
-          <img src="assets/img/experience2.jpg?v=14.1" alt="Special One Experience">
+          <img loading="lazy" decoding="async" src="assets/img/experience2.jpg?v=14.1" alt="Special One Experience">
         </div>
       </article>
 
@@ -263,7 +276,7 @@ gtag("config", "G-HH45EVVGY7");
         </div>
 
         <div class="program-img">
-          <img src="assets/img/international.jpg?v=14.0" alt="Special One International Experience">
+          <img loading="lazy" decoding="async" src="assets/img/international.jpg?v=14.0" alt="Special One International Experience">
         </div>
       </article>
 
@@ -293,7 +306,7 @@ gtag("config", "G-HH45EVVGY7");
         </div>
 
         <div class="program-img">
-          <img src="assets/img/Individual-training.png?v=14.0" alt="Special One Individual Training">
+          <img loading="lazy" decoding="async" src="assets/img/Individual-training.png?v=14.0" alt="Special One Individual Training">
         </div>
       </article>
     </div>
@@ -379,11 +392,11 @@ gtag("config", "G-HH45EVVGY7");
     </div>
 
     <div class="gallery-grid reveal">
-      <img src="assets/img/gallery1.jpg" alt="Entrenamiento Special One Academy">
-      <img src="assets/img/gallery2.jpg" alt="Tecnificación en grupo Special One Academy">
-      <img src="assets/img/gallery3.jpg" alt="Sesión de fútbol Special One Academy">
-      <img src="assets/img/gallery4.jpg" alt="Jugadores entrenando en Special One Academy">
-      <img src="assets/img/gallery5.jpg" alt="Experiencia formativa Special One Academy">
+      <img loading="lazy" decoding="async" src="assets/img/gallery1.jpg" alt="Entrenamiento Special One Academy">
+      <img loading="lazy" decoding="async" src="assets/img/gallery2.jpg" alt="Tecnificación en grupo Special One Academy">
+      <img loading="lazy" decoding="async" src="assets/img/gallery3.jpg" alt="Sesión de fútbol Special One Academy">
+      <img loading="lazy" decoding="async" src="assets/img/gallery4.jpg" alt="Jugadores entrenando en Special One Academy">
+      <img loading="lazy" decoding="async" src="assets/img/gallery5.jpg" alt="Experiencia formativa Special One Academy">
     </div>
   </div>
 </section>
@@ -456,7 +469,7 @@ gtag("config", "G-HH45EVVGY7");
 <footer class="footer">
   <div class="container footer-inner">
     <div>© Special One Academy · Asociación Deportiva Andalucía Activa</div>
-    <a class="manager-footer" href="special-one-manager.html">Special One Manager</a>
+    <a class="manager-footer" href="#manager">Special One Manager</a>
     <div class="legal">
       <a href="aviso-legal.html">Aviso legal</a>
       <a href="privacidad.html">Privacidad</a>
@@ -510,17 +523,7 @@ gtag("config", "G-HH45EVVGY7");
   </div>
 </div>
 
-<div id="season-floating-banner">
-  <button id="season-close" aria-label="Cerrar">×</button>
 
-  <div class="season-content">
-    <div class="season-label">INSCRIPCIONES ABIERTAS</div>
-    <div class="season-title">SPECIAL ONE TRAINING</div>
-    <div class="season-info">Tecnificación durante la temporada · Grupos reducidos · Club Río Grande, Mairena del Aljarafe</div>
-  </div>
-
-  <button class="season-btn" onclick="openTally('NpMjqB')">Solicitar plaza →</button>
-</div>
 
 <style>
 #season-floating-banner{
@@ -614,7 +617,7 @@ gtag("config", "G-HH45EVVGY7");
 }
 </style>
 
-<script src="assets/script.js?v=14.0"></script>
+<script src="assets/script.js?v=15-launch"></script>
 
 <script>
 setTimeout(function(){
