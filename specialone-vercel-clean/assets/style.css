@@ -191,3 +191,13 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 @media(max-width:360px){.launch-home .hero h1{font-size:40px}.launch-home .hero .eyebrow{font-size:8px}.launch-home .nav{padding:10px}.launch-home .nav .brand span{font-size:13px}.launch-home .nav .lang{padding:10px}.launch-home .nav .mobile-toggle{padding:10px}.launch-home .launch-app-copy h2{font-size:42px}.launch-app-functions{grid-template-columns:1fr}.launch-app-functions article{flex-direction:row;gap:18px;padding:16px 0}.launch-app-functions article+article{border-left:0;border-top:1px solid #ffffff18;padding-left:0}.launch-app-functions p{font-size:12px}.launch-home .gallery-grid{grid-auto-rows:150px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.launch-home .reveal{opacity:1;transform:none;transition:none}.launch-home *{animation:none!important;transition:none!important}}
 .launch-home .nav .manager-desktop{background:#252318;color:#f1cf69;border:1px solid #665522;box-shadow:none}
+
+/* Compact Manager introduction: full presentation remains on its own page. */
+.launch-preview{display:block;position:relative;text-decoration:none;border-radius:24px;overflow:hidden;box-shadow:0 30px 100px #0006;border:1px solid #776026}
+.launch-preview img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+.launch-preview-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:#f1cf69;color:#111;font-size:25px;box-shadow:0 6px 32px #0008}
+.launch-preview-caption{position:absolute;bottom:0;left:0;right:0;padding:45px 15px 20px;background:linear-gradient(transparent,#000);color:#fff;text-align:center;font-size:12px;font-weight:700}
+.launch-home .hero-actions .app-access-disabled{cursor:not-allowed;opacity:.65;transform:none;box-shadow:none}
+.preview-status{display:block;color:#aaa;font-size:11px;margin-bottom:12px}
+.launch-home .launch-app-actions{margin-top:30px}
+@media(max-width:860px){.launch-home .launch-app-copy h2{font-size:clamp(38px,10vw,48px)}.launch-home .launch-preview{width:min(100%,280px)}.launch-home .launch-app-actions>.btn{font-size:11px;min-height:54px}}
