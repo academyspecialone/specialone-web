@@ -45,14 +45,14 @@ window.addEventListener("load", function () {
 
 <div class="aviso" role="region" aria-label="Inscripciones">
   <div class="contenedor">
-    <p style="margin:0">Inscripciones abiertas en SO Training. <a href="#contacto" data-programa="SO Training Grupal">Solicitar plaza</a></p>
+    <p style="margin:0">Inscripciones abiertas en SO Training. <a href="#contacto" data-programa="SO Training">Solicitar plaza</a></p>
     <button type="button" aria-label="Cerrar aviso">×</button>
   </div>
 </div>
 
 <header class="cabecera">
   <div class="contenedor">
-    <a class="marca" href="/" aria-label="Special One Academy, inicio"><img src="assets/special-one-official.svg" alt="Special One, Work To Talent" width="4083" height="1467"></a>
+    <a class="marca" href="/" aria-label="Special One Academy, inicio"><img loading="lazy" src="assets/special-one-official.svg" alt="Special One, Work To Talent" width="4083" height="1467"></a>
     <button class="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú"><span></span></button>
     <nav id="menu-principal" class="menu" aria-label="Navegación principal">
       <a href="#programas">Programas</a>
@@ -95,7 +95,8 @@ window.addEventListener("load", function () {
     </div>
   </section>
 
-  <section class="escaparate" id="manager" aria-labelledby="titulo-manager">
+  <section class="escaparate" id="manager" aria-labelledby="titulo-manager" data-deco>
+    <svg class="deco deco-campo deco-campo-app" viewBox="0 0 600 600" aria-hidden="true"><circle class="trazo" pathLength="1" cx="300" cy="300" r="120" stroke="rgba(255,255,255,.10)" stroke-width="3"/><line class="trazo" pathLength="1" x1="300" y1="0" x2="300" y2="600" stroke="rgba(255,255,255,.10)" stroke-width="3"/><circle cx="300" cy="300" r="6" fill="rgba(255,255,255,.18)"/><path class="trazo" pathLength="1" d="M600 170 H480 V430 H600" stroke="rgba(255,255,255,.08)" stroke-width="3"/></svg>
     <div class="contenedor">
       <div>
         <span class="estado-app" data-estado="Disponible a partir del 1 de noviembre" data-lanzado="Ya disponible">Disponible a partir del 1 de noviembre</span>
@@ -110,7 +111,7 @@ window.addEventListener("load", function () {
         </ul>
         <div class="tarjeta-precio">
           <span class="cifra">12,50 €</span>
-          <p>por sesión con el bono de 4 de SO Training Grupal reservado desde la app<small>Reservando directamente o por WhatsApp: 16,23 € por sesión</small></p>
+          <p>por sesión con el bono de 4 de SO Training, reservando desde la app<small>Reservando directamente o por WhatsApp: 16,23 € por sesión</small></p>
         </div>
         <div class="acciones">
           <a class="btn btn-primario" href="special-one-manager.html">Ver la presentación completa</a>
@@ -125,50 +126,52 @@ window.addEventListener("load", function () {
     </div>
   </section>
 
-  <section class="seccion" id="programas" aria-labelledby="titulo-programas">
+  <section class="seccion" id="programas" aria-labelledby="titulo-programas" data-deco>
+    <svg class="deco deco-campo" viewBox="0 0 600 600" aria-hidden="true"><circle class="trazo" pathLength="1" cx="300" cy="300" r="120" stroke="rgba(255,255,255,.10)" stroke-width="3"/><line class="trazo" pathLength="1" x1="300" y1="0" x2="300" y2="600" stroke="rgba(255,255,255,.10)" stroke-width="3"/><circle cx="300" cy="300" r="6" fill="rgba(255,255,255,.18)"/><path class="trazo" pathLength="1" d="M600 170 H480 V430 H600" stroke="rgba(255,255,255,.08)" stroke-width="3"/></svg>
     <div class="contenedor">
       <div class="cabeza">
+        <svg class="deco deco-jugada" viewBox="0 0 420 220" aria-hidden="true"><circle class="punto" cx="30" cy="180" r="12" stroke="#fff" stroke-width="4"/><circle class="punto" cx="200" cy="60" r="12" stroke="#fff" stroke-width="4"/><path class="trazo" pathLength="1" d="M44 170 Q 110 90 186 66" stroke="rgba(255,255,255,.6)" stroke-width="3"/><path class="trazo" pathLength="1" d="M214 66 C 280 70 330 120 380 170" stroke="#efd06a" stroke-width="5"/><path class="trazo" pathLength="1" d="M362 162 L 384 174 L 372 150" stroke="#efd06a" stroke-width="5"/><g class="punto" stroke="#efd06a" stroke-width="4"><line x1="300" y1="40" x2="322" y2="62"/><line x1="322" y1="40" x2="300" y2="62"/></g></svg>
         <h2 id="titulo-programas">Cuatro programas para seguir mejorando</h2>
         <p>Entrenamiento en grupo reducido, sesiones individuales, experiencias en vacaciones y un programa para futbolistas internacionales.</p>
       </div>
 
 
       <article class="programa-fila">
-        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-training-grupal-720.webp 720w, assets/img/web/so-training-grupal-1200.webp 1200w" sizes="(max-width:900px) 100vw, 640px"><img src="assets/img/web/so-training-grupal-1200.jpg" alt="Jugadores de SO Training Grupal haciendo ejercicios de coordinación con aros y conos" width="1200" height="675" loading="lazy"></picture></figure></div>
+        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-training-grupal-720.webp 720w, assets/img/web/so-training-grupal-1200.webp 1200w" sizes="(max-width:900px) 100vw, 640px"><img loading="lazy" src="assets/img/web/so-training-grupal-1200.jpg" alt="Jugadores de SO Training haciendo ejercicios de coordinación con aros y conos" width="1200" height="675" ></picture></figure></div>
         <div>
-          <span class="grupo">SO Training</span>
-          <h3>SO Training Grupal</h3>
-          <p class="para">Tecnificación en grupos reducidos durante toda la temporada.</p>
-          <p class="desc">El programa permanente de la academia para jugadores y jugadoras que quieren seguir mejorando entre semana, con entrenamientos específicos que complementan lo que hacen en su club.</p>
+          <span class="grupo">Temporada</span>
+          <h3>SO Training</h3>
+          <p class="para">Tecnificación permanente, en grupos reducidos, los domingos durante toda la temporada.</p>
+          <p class="desc">Para jugadores y jugadoras que quieren seguir mejorando durante la temporada. Reforzamos aspectos técnicos, tácticos, físicos y mentales para complementar el trabajo de su club, con sesiones que aumentan la participación y corrigen los detalles de cada uno.</p>
           <ul class="claves"><li>Grupos por edad, categoría y nivel</li><li>Corrección individualizada</li><li>Trabajo técnico, táctico, físico y mental</li><li>Entorno exigente y cercano</li></ul>
-          <a class="ventaja-app" href="special-one-manager.html#ahorro">Con el bono de 4 sesiones reservado desde Special One Manager, cada sesión sale a 12,50 €.</a>
+          <a class="ventaja-app" href="special-one-manager.html#ahorro">Con el bono de 4 sesiones, reservando desde Special One Manager, cada sesión sale a 12,50 €.</a>
           <div class="acciones">
-            <a class="btn btn-primario" href="programas/so-training-grupal.html">Ver programa completo</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Training%20Grupal" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+            <a class="btn btn-primario" href="programas/so-training.html">Ver programa completo</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Training" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
           </div>
         </div>
       </article>
       <article class="programa-fila">
-        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-training-individual-720.webp 720w, assets/img/web/so-training-individual-1200.webp 1200w" sizes="(max-width:900px) 100vw, 640px"><img src="assets/img/web/so-training-individual-1200.jpg" alt="Entrenador de Special One trabajando con un jugador en una sesión individual" width="1200" height="675" loading="lazy"></picture></figure></div>
+        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-training-individual-720.webp 720w, assets/img/web/so-training-individual-1200.webp 1200w" sizes="(max-width:900px) 100vw, 640px"><img loading="lazy" src="assets/img/web/so-training-individual-1200.jpg" alt="Entrenador de Special One trabajando con un jugador en una sesión individual" width="1200" height="675" ></picture></figure></div>
         <div>
-          <span class="grupo">SO Training</span>
-          <h3>SO Training Individual</h3>
+          <span class="grupo">Temporada</span>
+          <h3>SO Individual Training</h3>
           <p class="para">Sesiones personalizadas para jugadores, jugadoras y porteros.</p>
           <p class="desc">Cada sesión se centra en lo que el futbolista necesita: técnica, toma de decisiones, golpeo, control, conducción, finalización, acciones defensivas o aspectos propios de su posición.</p>
           <ul class="claves"><li>Adaptado a edad, nivel, posición y objetivos</li><li>Corrección directa toda la sesión</li><li>Específico para porteros</li><li>Seguimiento cercano</li></ul>
           <div class="acciones">
-            <a class="btn btn-primario" href="programas/so-training-individual.html">Ver programa completo</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Training%20Individual" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+            <a class="btn btn-primario" href="programas/so-individual-training.html">Ver programa completo</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Individual%20Training" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
           </div>
         </div>
       </article>
       <article class="programa-fila">
-        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-experience-720.webp 720w, assets/img/web/so-experience-1200.webp 1200w" sizes="(max-width:900px) 100vw, 640px"><img src="assets/img/web/so-experience-1200.jpg" alt="Foto de grupo de jugadores y entrenadores en un clinic de SO Experience" width="1200" height="670" loading="lazy"></picture></figure></div>
+        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-experience-720.webp 720w, assets/img/web/so-experience-1200.webp 1200w" sizes="(max-width:900px) 100vw, 640px"><img loading="lazy" src="assets/img/web/so-experience-1200.jpg" alt="Foto de grupo de jugadores y entrenadores en un clinic de SO Experience" width="1200" height="670" ></picture></figure></div>
         <div>
           <span class="grupo">Experiencias</span>
           <h3>SO Experience</h3>
           <p class="para">Clinics y experiencias de varios días en Navidad, Semana Santa y verano.</p>
-          <p class="desc">Los futbolistas conviven, entrenan y aprenden en grupos reducidos junto a entrenadores especializados, con tareas específicas, competiciones y correcciones adaptadas a cada etapa.</p>
+          <p class="desc">Experiencias de varios días en las que los jugadores conviven, entrenan y aprenden en grupos reducidos junto a entrenadores especializados. El objetivo: que cada uno termine habiendo aprendido, disfrutado y mejorado aspectos reales de su juego.</p>
           <ul class="claves"><li>Clinics y eventos formativos</li><li>Competiciones y dinámicas adaptadas</li><li>Correcciones individualizadas</li><li>En periodos de vacaciones</li></ul>
           <div class="acciones">
             <a class="btn btn-primario" href="programas/so-experience.html">Ver programa completo</a>
@@ -177,13 +180,13 @@ window.addEventListener("load", function () {
         </div>
       </article>
       <article class="programa-fila">
-        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-international-640.webp 640w, assets/img/web/so-international-1024.webp 1024w" sizes="(max-width:900px) 100vw, 640px"><img src="assets/img/web/so-international-1024.jpg" alt="Jugador internacional con dos entrenadores de Special One Academy en el campo" width="1024" height="1024" loading="lazy"></picture></figure></div>
+        <div class="bloque"><figure class="foto"><picture><source type="image/webp" srcset="assets/img/web/so-international-640.webp 640w, assets/img/web/so-international-1024.webp 1024w" sizes="(max-width:900px) 100vw, 640px"><img loading="lazy" src="assets/img/web/so-international-1024.jpg" alt="Jugador internacional con dos entrenadores de Special One Academy en el campo" width="1024" height="1024" ></picture></figure></div>
         <div>
           <span class="grupo">Experiencias</span>
           <h3>SO International Experience</h3>
           <p class="para">Formación en España para futbolistas internacionales.</p>
-          <p class="desc">Durante varios días, el jugador entrena y es evaluado por entrenadores de la academia en sesiones individuales, entrenamientos colectivos y partidos adaptados a su nivel, viviendo el fútbol español desde dentro.</p>
-          <ul class="claves"><li>Experiencia personalizada en Sevilla</li><li>Sesiones individuales y colectivas</li><li>Evaluación por entrenadores de la academia</li><li>Convivencia en entorno futbolístico español</li></ul>
+          <p class="desc">Durante varios días, el jugador entrena y es evaluado por entrenadores de la academia en sesiones individuales, entrenamientos colectivos y partidos adaptados a su nivel. Gracias a los acuerdos deportivos de la academia, puede compartir entrenamientos con equipos y jugadores del fútbol español.</p>
+          <ul class="claves"><li>Experiencia personalizada en Sevilla</li><li>Sesiones individuales y colectivas</li><li>Evaluación por entrenadores de la academia</li><li>Entrenamientos con equipos españoles</li></ul>
           <div class="acciones">
             <a class="btn btn-primario" href="programas/so-international-experience.html">Ver programa completo</a>
             <a class="btn btn-whatsapp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20International%20Experience" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
@@ -193,16 +196,17 @@ window.addEventListener("load", function () {
     </div>
   </section>
 
-  <section class="seccion metodo" id="academia" aria-labelledby="titulo-academia">
+  <section class="seccion metodo" id="academia" aria-labelledby="titulo-academia" data-deco>
+    <svg class="deco deco-formacion" viewBox="0 0 300 420" aria-hidden="true"><g stroke="rgba(255,255,255,.22)" stroke-width="3" fill="none"><circle class="punto" cx="150" cy="390" r="10"/><circle class="punto" cx="50" cy="300" r="10"/><circle class="punto" cx="250" cy="300" r="10"/><circle class="punto" cx="150" cy="220" r="10"/><circle class="punto" cx="70" cy="120" r="10"/><circle class="punto" cx="230" cy="120" r="10"/><circle class="punto" cx="150" cy="30" r="10" stroke="#efd06a"/></g><path class="trazo" pathLength="1" d="M150 380 L 58 308 L 142 226 L 222 128 L 156 40" stroke="#efd06a" stroke-width="3" stroke-opacity=".7"/></svg>
     <div class="contenedor">
       <figure>
-        <picture><source type="image/webp" srcset="assets/img/web/metodologia-800.webp 800w, assets/img/web/metodologia-1376.webp 1376w" sizes="(max-width:900px) 100vw, 520px"><img src="assets/img/web/metodologia-1376.jpg" alt="Entrenador de Special One Academy dando indicaciones a un grupo de jugadores" width="1376" height="768" loading="lazy"></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/metodologia-800.webp 800w, assets/img/web/metodologia-1376.webp 1376w" sizes="(max-width:900px) 100vw, 520px"><img loading="lazy" src="assets/img/web/metodologia-1376.jpg" alt="Entrenador de Special One Academy dando indicaciones a un grupo de jugadores" width="1376" height="768" ></picture>
       </figure>
       <div>
         <h2 id="titulo-academia">Una academia que complementa a tu club</h2>
-        <p class="entradilla">Special One Academy es una academia de tecnificación de fútbol en Sevilla, gestionada por la Asociación Deportiva Andalucía Activa. Trabajamos con futbolistas desde prebenjamín hasta juvenil.</p>
-        <p class="secundario">No queremos sustituir al club. Queremos dar al jugador lo que en un entrenamiento de equipo, con veinte compañeros, es difícil de conseguir: alguien que se fije en sus detalles. Por eso trabajamos en grupos reducidos y corregimos de cerca, gesto a gesto.</p>
-        <p class="secundario">Cada tarea tiene un porqué. Repetimos para mejorar la técnica, la coordinación y la confianza, no para llenar la sesión. La exigencia se ajusta a la edad, la categoría y el nivel de cada uno, y el error forma parte del método: entrenar, competir, equivocarse, corregir y volver a intentarlo.</p>
+        <p class="entradilla">Special One Academy es una academia de tecnificación y formación futbolística en Sevilla, gestionada por la Asociación Deportiva Andalucía Activa. Trabajamos con futbolistas desde prebenjamín hasta juvenil.</p>
+        <p class="secundario">Nuestro objetivo no es sustituir a los clubes, sino complementar la formación del futbolista con un trabajo más cercano, detallado y personalizado: grupos reducidos, sesiones específicas y experiencias formativas pensadas para mejorar el rendimiento, la comprensión del juego y la confianza dentro del campo.</p>
+        <p class="secundario">Nuestra metodología se basa en la corrección, la repetición con sentido, la exigencia adaptada y el aprendizaje desde la experiencia. Y más allá del entrenamiento, buscamos un entorno donde el jugador disfrute, aprenda y evolucione acompañado de profesionales comprometidos con su proceso.</p>
       </div>
     </div>
   </section>
@@ -214,12 +218,12 @@ window.addEventListener("load", function () {
         <p>Sesiones, clinics y experiencias de Special One Academy.</p>
       </div>
       <div class="galeria">
-        <picture><source type="image/webp" srcset="assets/img/web/galeria-1-700.webp 700w, assets/img/web/galeria-1-1200.webp 1200w" sizes="(max-width:640px) 100vw, 800px"><img src="assets/img/web/galeria-1-1200.jpg" alt="Jugador corriendo con el balón durante un entrenamiento" width="1200" height="670" loading="lazy"></picture>
-        <picture><source type="image/webp" srcset="assets/img/web/galeria-2-700.webp" ><img src="assets/img/web/galeria-2-1200.jpg" alt="Jugador conduciendo el balón entre conos" width="1200" height="670" loading="lazy"></picture>
-        <picture><source type="image/webp" srcset="assets/img/web/galeria-3-640.webp"><img src="assets/img/web/galeria-3-1024.jpg" alt="Jugador controlando un balón aéreo" width="1024" height="1024" loading="lazy"></picture>
-        <picture><source type="image/webp" srcset="assets/img/web/galeria-4-700.webp"><img src="assets/img/web/galeria-4-1200.jpg" alt="Jugador golpeando el balón junto a una pica" width="1200" height="670" loading="lazy"></picture>
-        <picture><source type="image/webp" srcset="assets/img/web/galeria-5-700.webp"><img src="assets/img/web/galeria-5-1200.jpg" alt="Portera preparada para atajar en un entrenamiento de porteros" width="1200" height="670" loading="lazy"></picture>
-        <picture><source type="image/webp" srcset="assets/img/web/galeria-6-700.webp"><img src="assets/img/web/galeria-6-1200.jpg" alt="Grupo de jugadores con petos posando en el césped" width="1200" height="670" loading="lazy"></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/galeria-1-700.webp 700w, assets/img/web/galeria-1-1200.webp 1200w" sizes="(max-width:640px) 100vw, 800px"><img loading="lazy" src="assets/img/web/galeria-1-1200.jpg" alt="Jugador corriendo con el balón durante un entrenamiento" width="1200" height="670" ></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/galeria-2-700.webp" ><img loading="lazy" src="assets/img/web/galeria-2-1200.jpg" alt="Jugador conduciendo el balón entre conos" width="1200" height="670" ></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/galeria-3-640.webp"><img loading="lazy" src="assets/img/web/galeria-3-1024.jpg" alt="Jugador controlando un balón aéreo" width="1024" height="1024" ></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/galeria-4-700.webp"><img loading="lazy" src="assets/img/web/galeria-4-1200.jpg" alt="Jugador golpeando el balón junto a una pica" width="1200" height="670" ></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/galeria-5-700.webp"><img loading="lazy" src="assets/img/web/galeria-5-1200.jpg" alt="Portera preparada para atajar en un entrenamiento de porteros" width="1200" height="670" ></picture>
+        <picture><source type="image/webp" srcset="assets/img/web/galeria-6-700.webp"><img loading="lazy" src="assets/img/web/galeria-6-1200.jpg" alt="Grupo de jugadores con petos posando en el césped" width="1200" height="670" ></picture>
       </div>
     </div>
   </section>
@@ -230,21 +234,22 @@ window.addEventListener("load", function () {
         <p class="fecha">Cada programa, su equipación</p>
         <div>
           <h2 id="titulo-equipacion">Equipación oficial</h2>
-          <p class="secundario">En todas las sesiones se entrena con la equipación oficial de la academia. Hay tres: SO Training (compartida por Grupal e Individual), SO Experience y SO International Experience.</p>
+          <p class="secundario">En todas las sesiones se entrena con la equipación oficial de la academia. Hay tres: la de SO Training, que también se usa en SO Individual Training; la de SO Experience, y la de SO International Experience.</p>
           <p class="secundario">La nueva equipación de SO Training será obligatoria desde el 1 de enero de 2027.</p>
           <dl>
             <dt>Dónde conseguirla</dt>
-            <dd>Soccer Factory, esta web, la sección Shop de Special One Manager o directamente con la academia.</dd>
+            <dd>En Soccer Factory o directamente con la academia. Muy pronto, también desde la sección Shop de Special One Manager.</dd>
           </dl>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="seccion contacto" id="contacto" aria-labelledby="titulo-contacto" style="padding-top:0">
+  <section class="seccion contacto" id="contacto" data-deco aria-labelledby="titulo-contacto" style="padding-top:0">
     <div class="contenedor">
       <div>
         <h2 id="titulo-contacto">Contacta con nosotros</h2>
+        <svg class="deco deco-flecha" viewBox="0 0 260 120" aria-hidden="true"><path class="trazo" pathLength="1" d="M10 100 C 70 20, 160 20, 230 60" stroke="#efd06a" stroke-width="5"/><path class="trazo" pathLength="1" d="M212 44 L 236 62 L 210 74" stroke="#efd06a" stroke-width="5"/></svg>
         <p class="entradilla" style="margin-top:24px">Cuéntanos qué programa te interesa y te orientamos sobre la mejor opción para el jugador.</p>
         <ul class="datos">
           <li><a href="tel:+34614806029"><small>Teléfono y WhatsApp</small>+34 614 80 60 29</a></li>
@@ -256,8 +261,8 @@ window.addEventListener("load", function () {
         <div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" required></div>
         <div class="campo"><label for="programa">Programa</label>
           <select id="programa" name="programa">
-            <option>SO Training Grupal</option>
-            <option>SO Training Individual</option>
+            <option>SO Training</option>
+            <option>SO Individual Training</option>
             <option>SO Experience</option>
             <option>SO International Experience</option>
             <option>Consulta general</option>
@@ -273,7 +278,7 @@ window.addEventListener("load", function () {
 
 <footer class="pie">
   <div class="contenedor">
-    <img src="assets/special-one-official.svg" alt="Special One, Work To Talent" width="4083" height="1467" loading="lazy">
+    <img loading="lazy" src="assets/special-one-official.svg" alt="Special One, Work To Talent" width="4083" height="1467" >
     <nav aria-label="Pie de página">
       <a href="#programas">Programas</a><a href="#academia">La academia</a><a href="#equipacion">Equipación</a><a href="special-one-manager.html">Special One Manager</a><a href="#contacto">Contacto</a>
     </nav>
@@ -296,6 +301,11 @@ window.addEventListener("load", function () {
   </div>
 </div>
 
+
+<dialog class="modal-video" id="modal-video" aria-label="Vídeo de Special One Manager">
+  <button class="cerrar-modal" type="button" aria-label="Cerrar vídeo">×</button>
+  <video data-mp4="assets/special-one-manager.mp4" data-webm="assets/special-one-manager.webm" poster="assets/manager-poster.webp" controls playsinline preload="none"></video>
+</dialog>
 <script src="assets/so-config.js"></script>
 <script src="assets/so.js?v=2" defer></script>
 </body>

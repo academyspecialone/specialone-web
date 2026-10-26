@@ -78,39 +78,88 @@
   var video = $("#video-manager");
   if (video) {
     var reducir = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var modal = $("#modal-video"), boton = $("#ver-pantalla-completa");
+    var mv = modal ? $("video", modal) : null;
+
+    var inyectarFuentes = function (v) {
+      if (v.dataset.webm) {
+        var webm = document.createElement("source");
+        webm.src = v.dataset.webm; webm.type = "video/webm";
+        v.appendChild(webm);
+      }
+      if (v.dataset.mp4) {
+        var mp4 = document.createElement("source");
+        mp4.src = v.dataset.mp4; mp4.type = "video/mp4";
+        v.appendChild(mp4);
+      }
+    };
+
     var cargado = false;
     var cargarVideo = function () {
       if (cargado) return;
       cargado = true;
-      if (video.dataset.webm) {
-        var webm = document.createElement("source");
-        webm.src = video.dataset.webm; webm.type = "video/webm";
-        video.appendChild(webm);
-      }
-      if (video.dataset.mp4) {
-        var mp4 = document.createElement("source");
-        mp4.src = video.dataset.mp4; mp4.type = "video/mp4";
-        video.appendChild(mp4);
-      }
+      inyectarFuentes(video);
       video.load();
       if (!reducir) { video.muted = true; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
     };
+
     if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entradas) {
+      var ioVideo = new IntersectionObserver(function (entradas) {
         entradas.forEach(function (entrada) {
-          if (entrada.isIntersecting) { cargarVideo(); io.disconnect(); }
+          if (entrada.isIntersecting) { cargarVideo(); ioVideo.disconnect(); }
         });
       }, { rootMargin: "200px" });
-      io.observe(video);
+      ioVideo.observe(video);
     } else {
       cargarVideo();
     }
-    var full = $("#ver-pantalla-completa");
-    if (full) full.addEventListener("click", function () {
-      cargarVideo();
-      if (video.requestFullscreen) video.requestFullscreen();
-      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
-      video.muted = false; video.play();
+
+    var mvCargado = false;
+    if (modal && boton && modal.showModal) {
+      var cerrarModal = function () { mv.pause(); modal.close(); };
+      boton.addEventListener("click", function () {
+        cargarVideo();
+        video.pause();
+        if (!mvCargado) { mvCargado = true; inyectarFuentes(mv); mv.load(); }
+        modal.showModal();
+        mv.currentTime = 0; mv.muted = false;
+        var q = mv.play(); if (q && q.catch) q.catch(function () {});
+      });
+      $(".cerrar-modal", modal).addEventListener("click", cerrarModal);
+      modal.addEventListener("click", function (e) { if (e.target === modal) cerrarModal(); });
+      modal.addEventListener("close", function () { mv.pause(); if (!reducir) { var r = video.play(); if (r && r.catch) r.catch(function () {}); } });
+    }
+  }
+
+  /* Animaciones de entrada al hacer scroll */
+  var reducirMov = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reducirMov && "IntersectionObserver" in window) {
+    var selector = ".cabeza, .programa-fila > div:last-child, .mini-funciones li, .tarjeta-precio, .escaparate h2, .escaparate .sub, .metodo figure, .metodo h2, .metodo p, .galeria picture, .equipacion .caja, .contacto h2, .datos li, .formulario, .paso-sistema, .funciones-4 > div, .preguntas details, .ficha .cuerpo > *, .ficha aside, .tabla-precios, .cierre h2";
+    var items = $$(selector);
+    doc.classList.add("anim");
+    items.forEach(function (el) {
+      el.setAttribute("data-reveal", "");
+      var hermanos = el.parentElement ? $$(":scope > [data-reveal]", el.parentElement) : [];
+      el.style.setProperty("--d", (Math.min(hermanos.indexOf(el), 6) * 80) + "ms");
+    });
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -5% 0px", threshold: 0 });
+    items.forEach(function (el) { io.observe(el); });
+    $$("[data-deco]").forEach(function (sec) {
+      var iod = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { sec.classList.add("deco-visible"); iod.disconnect(); }
+      }, { threshold: 0.15 });
+      iod.observe(sec);
+    });
+    $$(".programa-fila").forEach(function (fila) {
+      fila.classList.add("foto-oculta");
+      var iof = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { fila.classList.add("foto-visible"); iof.disconnect(); }
+      }, { threshold: 0.05 });
+      iof.observe(fila);
     });
   }
 
