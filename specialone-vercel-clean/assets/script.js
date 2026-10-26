@@ -1,7 +1,8 @@
 
 const $=(s,c=document)=>c.querySelector(s);const $$=(s,c=document)=>[...c.querySelectorAll(s)];
 window.addEventListener('scroll',()=>$('.nav')?.classList.toggle('scrolled',scrollY>20));
-$('.mobile-toggle')?.addEventListener('click',()=>$('.nav').classList.toggle('open'));
+$('.mobile-toggle')?.addEventListener('click',()=>{const open=$('.nav').classList.toggle('open');$('.mobile-toggle').setAttribute('aria-expanded',String(open));});
+$$('.links a').forEach(a=>a.addEventListener('click',()=>{$('.nav')?.classList.remove('open');$('.mobile-toggle')?.setAttribute('aria-expanded','false');}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.15});$$('.reveal').forEach(el=>io.observe(el));
 function openTally(id){ if(window.Tally){Tally.openPopup(id,{layout:'modal',width:760,emoji:{text:'⚽',animation:'wave'}})} else {window.open('https://tally.so/r/'+id,'_blank')} }
 window.openTally=openTally;
@@ -43,9 +44,9 @@ const SOA_I18N = {
     navCta: 'Contacta con nosotros',
     lang: 'ES⌄',
     heroEyebrow: 'Academia de tecnificación en Sevilla',
-    heroTitle: 'Formamos jugadores.<br><span class="gold">Creamos futuro.</span>',
-    heroText: 'En Special One Academy ayudamos a futbolistas y porteros a mejorar su juego con entrenamientos profesionales, metodología propia y entrenadores cualificados.',
-    heroBtns: ['Conoce nuestros programas →','Quiénes somos ▶'],
+    heroTitle: 'Entrena con nosotros.<br><span class="gold">Reserva desde tu móvil.</span>',
+    heroText: 'Mejora tu fútbol con entrenadores cualificados. Instala gratis Special One Manager para consultar sesiones y gestionar las reservas de tu familia.',
+    heroBtns: ['INSTALA LA APP GRATIS ↗','DESCUBRE LOS PROGRAMAS ↓'],
     features: [
       ['Desde prebenjamín hasta juvenil','Programas adaptados a cada etapa formativa.'],
       ['Masculino, femenino, jugadores y porteros','Entrenamiento específico y personalizado.'],
@@ -128,9 +129,9 @@ const SOA_I18N = {
     navCta: 'Contact us',
     lang: 'EN⌄',
     heroEyebrow: 'Football training academy in Seville',
-    heroTitle: 'We develop players.<br><span class="gold">We create future.</span>',
-    heroText: 'At Special One Academy we help football players and goalkeepers improve their game through professional training, our own methodology and qualified coaches.',
-    heroBtns: ['Explore our programs →','About us ▶'],
+    heroTitle: 'Train with us.<br><span class="gold">Book from your phone.</span>',
+    heroText: 'Improve your football with qualified coaches. Install Special One Manager for free to check sessions and manage your family’s bookings.',
+    heroBtns: ['INSTALL THE APP FOR FREE ↗','EXPLORE OUR PROGRAMS ↓'],
     features: [
       ['From Pre-Benjamin to Juvenil','Programs adapted to every development stage.'],
       ['Boys, girls, players and goalkeepers','Specific and personalized training.'],
@@ -263,6 +264,7 @@ function applySOALanguage(lang){
   setText($('.cookie strong'), t.cookiesTitle);
   setText($('.cookie p'), t.cookiesText);
   $$('.cookie-actions button,.cookie-actions a').forEach((b,i)=>setText(b,t.cookiesBtns[i]));
+  $$('[data-es][data-en]').forEach(el=>{const text=el.dataset[lang==='en'?'en':'es'];if(el.hasAttribute('data-rich'))setHTML(el,text);else setText(el,text);});
   localStorage.setItem('soaLang',lang);
 }
 window.applySOALanguage = applySOALanguage;
