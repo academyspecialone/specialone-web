@@ -222,7 +222,7 @@ function applySOALanguage(lang){
   setText($('.hero .eyebrow'), t.heroEyebrow);
   setHTML($('.hero h1'), t.heroTitle);
   setText($('.hero-copy p'), t.heroText);
-  $$('.hero-actions a').forEach((a,i)=>setText(a,t.heroBtns[i]));
+  $$('.hero-actions .btn').forEach((a,i)=>setText(a,t.heroBtns[i]));
   $$('.hero-feature').forEach((card,i)=>{setText(card.querySelector('h3'),t.features[i]?.[0]);setText(card.querySelector('p'),t.features[i]?.[1]);});
   setText($('#quienes .eyebrow'), t.aboutEyebrow);
   setText($('#quienes h3'), t.aboutTitle);
