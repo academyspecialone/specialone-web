@@ -1,8 +1,5 @@
 
 const $=(s,c=document)=>c.querySelector(s);const $$=(s,c=document)=>[...c.querySelectorAll(s)];
-window.addEventListener('scroll',()=>$('.nav')?.classList.toggle('scrolled',scrollY>20));
-$('.mobile-toggle')?.addEventListener('click',()=>$('.nav').classList.toggle('open'));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.15});$$('.reveal').forEach(el=>io.observe(el));
 function openTally(id){ if(window.Tally){Tally.openPopup(id,{layout:'modal',width:760,emoji:{text:'⚽',animation:'wave'}})} else {window.open('https://tally.so/r/'+id,'_blank')} }
 window.openTally=openTally;
 $('.chat-launch')?.addEventListener('click',()=>$('.chatbot').classList.toggle('open'));
@@ -43,9 +40,9 @@ const SOA_I18N = {
     navCta: 'Contacta con nosotros',
     lang: 'ES⌄',
     heroEyebrow: 'Academia de tecnificación en Sevilla',
-    heroTitle: 'Formamos jugadores.<br><span class="gold">Creamos futuro.</span>',
-    heroText: 'En Special One Academy ayudamos a futbolistas y porteros a mejorar su juego con entrenamientos profesionales, metodología propia y entrenadores cualificados.',
-    heroBtns: ['Conoce nuestros programas →','Quiénes somos ▶'],
+    heroTitle: 'Tu fútbol.<br><span class="gold">Al siguiente nivel.</span>',
+    heroText: 'Entrenamiento específico, atención cercana y entrenadores cualificados. Complementamos el trabajo de tu club para que sigas mejorando.',
+    heroBtns: ['Conoce nuestros programas ↗','Contacta con nosotros'],
     features: [
       ['Desde prebenjamín hasta juvenil','Programas adaptados a cada etapa formativa.'],
       ['Masculino, femenino, jugadores y porteros','Entrenamiento específico y personalizado.'],
@@ -68,11 +65,11 @@ const SOA_I18N = {
       {
         title:'Special One<br>Experience',
         text:'Clinics y eventos deportivos de varios días, organizados durante vacaciones, puentes, festivos o fechas especiales.',
-        list:['Entrenamientos específicos','Competiciones y dinámicas','Correcciones individualizadas'],
+        list:['Entrenamientos específicos','Competiciones y dinámicas','Correcciones individualizadas','Trabajo adaptado a cada etapa'],
         btns:['Próximas inscripciones →','Consultar clinics']
       },
       {
-        title:'International<br>Experience',
+        title:'Special One<br>International Experience',
         text:'Experiencia formativa en Sevilla para futbolistas internacionales que quieren entrenar, competir y conocer el fútbol español desde dentro.',
         list:['Experiencia personalizada','Sesiones individuales y grupales','Partido en ligas privadas'],
         btns:['Formulario International →','Hablar con nosotros']
@@ -127,10 +124,10 @@ const SOA_I18N = {
     nav: ['About Us','Methodology','Programs','Gallery','Contact'],
     navCta: 'Contact us',
     lang: 'EN⌄',
-    heroEyebrow: 'Football training academy in Seville',
-    heroTitle: 'We develop players.<br><span class="gold">We create future.</span>',
-    heroText: 'At Special One Academy we help football players and goalkeepers improve their game through professional training, our own methodology and qualified coaches.',
-    heroBtns: ['Explore our programs →','About us ▶'],
+    heroEyebrow: 'Football development academy in Seville',
+    heroTitle: 'Your football.<br><span class="gold">The next level.</span>',
+    heroText: 'Focused training, close support and qualified coaches. We complement your club training to help you keep improving.',
+    heroBtns: ['Explore our programs ↗','Contact us'],
     features: [
       ['From Pre-Benjamin to Juvenil','Programs adapted to every development stage.'],
       ['Boys, girls, players and goalkeepers','Specific and personalized training.'],
@@ -157,7 +154,7 @@ const SOA_I18N = {
         btns:['Next registrations →','Ask about clinics']
       },
       {
-        title:'International<br>Experience',
+        title:'Special One<br>International Experience',
         text:'Football training experience in Seville for international players who want to train, compete and discover Spanish football from the inside.',
         list:['Personalized experience','Individual and group sessions','Private league match'],
         btns:['International Form →','Talk to us']
@@ -215,13 +212,13 @@ function applySOALanguage(lang){
   document.documentElement.lang = t.htmlLang;
   document.title = t.title;
   const desc = document.querySelector('meta[name="description"]'); if(desc) desc.setAttribute('content', t.description);
-  $$('.links a').forEach((a,i)=>setText(a,t.nav[i]));
+  $$('.links a').forEach((a,i)=>{if(t.nav[i])setText(a,t.nav[i]);});
   setText($('.nav-cta'), t.navCta);
   setText($('.lang'), t.lang);
   setText($('.hero .eyebrow'), t.heroEyebrow);
   setHTML($('.hero h1'), t.heroTitle);
   setText($('.hero-copy p'), t.heroText);
-  $$('.hero-actions a').forEach((a,i)=>setText(a,t.heroBtns[i]));
+  $$('.hero-actions .btn').forEach((a,i)=>setText(a,t.heroBtns[i]));
   $$('.hero-feature').forEach((card,i)=>{setText(card.querySelector('h3'),t.features[i]?.[0]);setText(card.querySelector('p'),t.features[i]?.[1]);});
   setText($('#quienes .eyebrow'), t.aboutEyebrow);
   setText($('#quienes h3'), t.aboutTitle);
@@ -234,7 +231,7 @@ function applySOALanguage(lang){
     const p=t.programCards[i]; if(!p) return;
     setHTML(card.querySelector('h3'),p.title);
     setText(card.querySelector('p'),p.text);
-    card.querySelectorAll('li').forEach((li,j)=>setText(li,p.list[j]));
+    card.querySelectorAll('.check-list li').forEach((li,j)=>{if(p.list[j])setText(li,p.list[j]);});
     card.querySelectorAll('.program-actions button,.program-actions a').forEach((b,j)=>setText(b,p.btns[j]));
   });
   $$('.value').forEach((card,i)=>{setText(card.querySelector('h4'),t.values[i]?.[0]);setText(card.querySelector('p'),t.values[i]?.[1]);});
@@ -263,6 +260,7 @@ function applySOALanguage(lang){
   setText($('.cookie strong'), t.cookiesTitle);
   setText($('.cookie p'), t.cookiesText);
   $$('.cookie-actions button,.cookie-actions a').forEach((b,i)=>setText(b,t.cookiesBtns[i]));
+  $$('[data-es][data-en]').forEach(el=>{const text=el.dataset[lang==='en'?'en':'es'];if(el.hasAttribute('data-rich'))setHTML(el,text);else setText(el,text);});
   localStorage.setItem('soaLang',lang);
 }
 window.applySOALanguage = applySOALanguage;
