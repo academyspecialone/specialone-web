@@ -1,6 +1,10 @@
 {
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/programas/so-training-grupal.html", "destination": "/programas/so-training.html", "permanent": true },
+    { "source": "/programas/so-training-individual.html", "destination": "/programas/so-individual-training.html", "permanent": true },
+    { "source": "/en/programas/so-training-grupal.html", "destination": "/en/programas/so-training.html", "permanent": true },
+    { "source": "/en/programas/so-training-individual.html", "destination": "/en/programas/so-individual-training.html", "permanent": true }
   ],
   "headers": [
     {
