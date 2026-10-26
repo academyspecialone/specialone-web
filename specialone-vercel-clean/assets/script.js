@@ -2,7 +2,6 @@
 const $=(s,c=document)=>c.querySelector(s);const $$=(s,c=document)=>[...c.querySelectorAll(s)];
 function openTally(id){ if(window.Tally){Tally.openPopup(id,{layout:'modal',width:760,emoji:{text:'⚽',animation:'wave'}})} else {window.open('https://tally.so/r/'+id,'_blank')} }
 window.openTally=openTally;
-$('.chat-launch')?.addEventListener('click',()=>$('.chatbot').classList.toggle('open'));
 const answers={
   es:{
     programas:'Tenemos cuatro programas: Special One Training, Special One Experience, Special One International Experience y Special One Individual Training. Puedes solicitar información desde cada programa o hablar por WhatsApp.',
@@ -23,9 +22,7 @@ const answers={
     whatsapp:'You can contact us directly on WhatsApp using the green button or here: +34 614 80 60 29.'
   }
 };
-$$('[data-answer]').forEach(b=>b.addEventListener('click',()=>{const a=$('.chat-answer');a.style.display='block';const lang=localStorage.getItem('soaLang')||'es'; a.textContent=(answers[lang]?.[b.dataset.answer])||answers[lang]?.programas||answers.es.programas;}));
-$('#chatSend')?.addEventListener('click',()=>{const v=$('#chatInput').value.trim();const a=$('.chat-answer');a.style.display='block';const lang=localStorage.getItem('soaLang')||'es'; a.innerHTML=(lang==='en'?'Thank you. For a personalized answer, contact us on WhatsApp and we will guide you toward the best program.':'Gracias. Para darte una respuesta personalizada, escríbenos por WhatsApp y te orientamos sobre el programa más adecuado.')+' <br><br><b>+34 614 80 60 29</b>';});
-$('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(e.target);const msg=`Hola Special One Academy, soy ${fd.get('nombre')}. Programa: ${fd.get('programa')}. Teléfono: ${fd.get('telefono')}. Email: ${fd.get('email')}. Mensaje: ${fd.get('mensaje')}`;window.open('https://wa.me/34614806029?text='+encodeURIComponent(msg),'_blank')});
+$('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(e.target);const msg=`Hola Special One Academy, soy ${fd.get('nombre')}. Programa: ${fd.get('programa')}. Mensaje: ${fd.get('mensaje')}`;window.open('https://wa.me/34614806029?text='+encodeURIComponent(msg),'_blank')});
 if(!localStorage.getItem('soaCookies')) setTimeout(()=>$('.cookie')?.classList.add('show'),900);
 $$('[data-cookie]').forEach(b=>b.addEventListener('click',()=>{localStorage.setItem('soaCookies',b.dataset.cookie);$('.cookie')?.classList.remove('show')}));
 
@@ -39,46 +36,45 @@ const SOA_I18N = {
     nav: ['Quiénes Somos','Metodología','Programas','Galería','Contacto'],
     navCta: 'Contacta con nosotros',
     lang: 'ES⌄',
-    heroEyebrow: 'Academia de tecnificación en Sevilla',
-    heroTitle: 'Tu fútbol.<br><span class="gold">Al siguiente nivel.</span>',
-    heroText: 'Entrenamiento específico, atención cercana y entrenadores cualificados. Complementamos el trabajo de tu club para que sigas mejorando.',
-    heroBtns: ['Conoce nuestros programas ↗','Contacta con nosotros'],
+    heroTitle: 'Academia de tecnificación de fútbol en Sevilla',
+    heroText: 'Entrenamiento específico, atención cercana y entrenadores cualificados para complementar el trabajo que el futbolista hace en su club.',
+    heroBtns: ['Ver programas','Hablar por WhatsApp'],
     features: [
-      ['Desde prebenjamín hasta juvenil','Programas adaptados a cada etapa formativa.'],
-      ['Masculino, femenino, jugadores y porteros','Entrenamiento específico y personalizado.'],
-      ['Grupos reducidos y entrenadores especializados','Atención individual y máxima calidad.']
+      ['De prebenjamín a juvenil','Programas adaptados a cada etapa.'],
+      ['Jugadores, jugadoras y porteros','Trabajo específico para cada perfil.'],
+      ['Grupos reducidos','Atención individual en cada sesión.']
     ],
     aboutEyebrow:'Quiénes somos',
-    aboutTitle:'Una academia para mejorar de verdad.',
-    aboutText:'Special One Academy es una academia de tecnificación y formación futbolística orientada al desarrollo real del jugador. Complementamos el trabajo de los clubes con sesiones específicas, corrección cercana y una metodología diseñada para mejorar el rendimiento, la comprensión del juego y la confianza dentro del campo.',
+    aboutTitle:'Una academia para seguir mejorando.',
+    aboutText:'Special One Academy es una academia de tecnificación y formación futbolística enfocada en la progresión del futbolista.',
     aboutTags:['Trabajo individualizado','Exigencia adaptada','Entorno cercano','Aprendizaje desde la experiencia'],
     programsEyebrow:'Programas',
     programsTitle:'Elige tu programa',
-    programsLead:'Cuatro formas de vivir el fútbol con Special One Academy: tecnificación permanente, clinics formativos, experiencia internacional y entrenamiento individual.',
+    programsLead:'Cuatro programas para seguir mejorando: entrenamiento en grupo reducido, sesiones individuales, experiencias en vacaciones y un programa para futbolistas internacionales.',
     programCards:[
       {
-        title:'Special One<br>Training',
-        text:'Programa permanente de tecnificación durante la temporada para jugadores, jugadoras y porteros que quieren mejorar con sesiones específicas y grupos reducidos.',
-        list:['Tecnificación semanal','Corrección individualizada','Grupos por edad, categoría y nivel'],
-        btns:['Formulario Training →','Resolver dudas']
+        title:'SO Training<br>Grupal',
+        text:'SO Training Grupal es el programa de tecnificación permanente de la academia, con entrenamientos en grupos reducidos durante la temporada.',
+        list:['Tecnificación durante la temporada','Grupos reducidos por edad, categoría y nivel','Corrección individualizada','Entorno exigente y cercano'],
+        btns:['Solicitar información','WhatsApp']
       },
       {
-        title:'Special One<br>Experience',
-        text:'Clinics y eventos deportivos de varios días, organizados durante vacaciones, puentes, festivos o fechas especiales.',
-        list:['Entrenamientos específicos','Competiciones y dinámicas','Correcciones individualizadas','Trabajo adaptado a cada etapa'],
-        btns:['Próximas inscripciones →','Consultar clinics']
+        title:'SO Training<br>Individual',
+        text:'SO Training Individual es el programa de entrenamientos individuales de la academia, dirigido a jugadores, jugadoras y porteros que buscan un trabajo personalizado y adaptado a sus necesidades.',
+        list:['Sesiones individuales o muy personalizadas','Para jugadores, jugadoras y porteros','Trabajo adaptado por edad, nivel, posición y objetivos','Corrección directa durante toda la sesión'],
+        btns:['Solicitar información','WhatsApp']
       },
       {
-        title:'Special One<br>International Experience',
-        text:'Experiencia formativa en Sevilla para futbolistas internacionales que quieren entrenar, competir y conocer el fútbol español desde dentro.',
-        list:['Experiencia personalizada','Sesiones individuales y grupales','Partido en ligas privadas'],
-        btns:['Formulario International →','Hablar con nosotros']
+        title:'SO<br>Experience',
+        text:'SO Experience reúne los clinics y eventos formativos de la academia durante vacaciones y fechas señaladas.',
+        list:['Clinics y eventos formativos','Entrenamientos específicos','Competiciones y dinámicas adaptadas','Correcciones individualizadas'],
+        btns:['Solicitar información','WhatsApp']
       },
       {
-        title:'Special One<br>Individual Training',
-        text:'Entrenamientos totalmente personalizados para jugadores y porteros que buscan una mejora específica.',
-        list:['Entrenamientos 100% personalizados','Trabajo específico por posición','Sesiones de 60 o 90 minutos'],
-        btns:['Formulario Individual →','Consultar disponibilidad']
+        title:'SO International<br>Experience',
+        text:'SO International Experience es un programa dirigido a futbolistas internacionales que quieren vivir una experiencia formativa dentro del fútbol español.',
+        list:['Experiencia personalizada en Sevilla','Sesiones individuales y entrenamientos colectivos','Evaluación por entrenadores de la academia','Convivencia y aprendizaje en entorno futbolístico español'],
+        btns:['Solicitar información','WhatsApp']
       }
     ],
     values:[
@@ -93,7 +89,7 @@ const SOA_I18N = {
     methods:[
       ['Corrección cercana','Observamos detalles técnicos y de comportamiento en el juego para acompañar al futbolista durante su proceso de mejora.'],
       ['Repetición con sentido','Diseñamos tareas para mejorar el gesto técnico, la coordinación y la seguridad del jugador sin convertir el entrenamiento en ejercicios vacíos.'],
-      ['Exigencia adaptada','El nivel de dificultad se ajusta a la edad, categoría, nivel y objetivos del futbolista para generar progreso real.'],
+      ['Exigencia adaptada','El nivel de dificultad se ajusta a la edad, categoría, nivel y objetivos del futbolista.'],
       ['Aprendizaje desde la experiencia','Entrenar, competir, equivocarse, corregir y volver a intentarlo. Esa es la base de nuestra forma de trabajar.']
     ],
     galleryEyebrow:'Galería',
@@ -102,9 +98,9 @@ const SOA_I18N = {
     contactEyebrow:'Contacto',
     contactTitle:'Contacta con nosotros',
     contactLead:'Cuéntanos qué programa te interesa y te orientamos sobre la mejor opción para el jugador.',
-    formLabels:['Nombre','Teléfono','Email','Programa','Mensaje'],
-    formPlaceholders:['Tu nombre','+34...','tu@email.com','Cuéntanos edad, categoría y qué necesitas.'],
-    formOptions:['Special One Training','Special One Experience','Special One International Experience','Special One Individual Training','Consulta general'],
+    formLabels:['Nombre','Programa','Mensaje'],
+    formPlaceholders:['Tu nombre','Cuéntanos edad, categoría y qué necesitas.'],
+    formOptions:['SO Training Grupal','SO Training Individual','SO Experience','SO International Experience','Consulta general'],
     formBtn:'Enviar consulta por WhatsApp →',
     footer:'© Special One Academy · Asociación Deportiva Andalucía Activa',
     legal:['Aviso legal','Privacidad','Cookies','Términos'],
@@ -112,7 +108,7 @@ const SOA_I18N = {
     chatbotSub:'Te ayudo a resolver dudas rápidas',
     chatbotIntro:'¿Sobre qué necesitas información?',
     quick:['Programas disponibles','Horarios y grupos','Ubicación','Individual Training','International Experience','Clinics y eventos','Hablar por WhatsApp'],
-    chatPlaceholder:'Escribe tu mensaje...',
+    chatPlaceholder:'Escribe tu mensaje…',
     cookiesTitle:'Cookies',
     cookiesText:'Utilizamos cookies técnicas y de análisis para mejorar la experiencia de navegación. Puedes aceptar o rechazar su uso.',
     cookiesBtns:['Aceptar','Rechazar','Ver política']
@@ -120,50 +116,49 @@ const SOA_I18N = {
   en: {
     htmlLang: 'en',
     title: 'Special One Academy | Football training academy in Seville',
-    description: 'Special One Academy is a football training academy in Seville for players and goalkeepers from Pre-Benjamin to Juvenil. Training, clinics and international experiences.',
+    description: 'Special One Academy is a football training academy in Seville for players and goalkeepers from U7 to U19. Training, clinics and international experiences.',
     nav: ['About Us','Methodology','Programs','Gallery','Contact'],
     navCta: 'Contact us',
     lang: 'EN⌄',
-    heroEyebrow: 'Football development academy in Seville',
-    heroTitle: 'Your football.<br><span class="gold">The next level.</span>',
-    heroText: 'Focused training, close support and qualified coaches. We complement your club training to help you keep improving.',
-    heroBtns: ['Explore our programs ↗','Contact us'],
+    heroTitle: 'Football technical training academy in Seville',
+    heroText: 'Specific training, close attention and qualified coaches to complement the work the player does at their club.',
+    heroBtns: ['See programs','Talk on WhatsApp'],
     features: [
-      ['From Pre-Benjamin to Juvenil','Programs adapted to every development stage.'],
-      ['Boys, girls, players and goalkeepers','Specific and personalized training.'],
-      ['Small groups and specialized coaches','Individual attention and maximum quality.']
+      ['From U7 to U19','Programs adapted to every stage.'],
+      ['Players and goalkeepers','Specific work for each profile.'],
+      ['Small groups','Individual attention in every session.']
     ],
     aboutEyebrow:'About us',
-    aboutTitle:'A football academy built for real improvement.',
-    aboutText:'Special One Academy is a football training and development academy focused on the real growth of the player. We complement club training with specific sessions, close correction and a methodology designed to improve performance, game understanding and confidence on the pitch.',
+    aboutTitle:'An academy to keep improving.',
+    aboutText:"Special One Academy is a football training and development academy focused on the player's progress.",
     aboutTags:['Individualized work','Adapted intensity','Close environment','Learning through experience'],
     programsEyebrow:'Programs',
     programsTitle:'Choose your program',
-    programsLead:'Four ways to experience football with Special One Academy: permanent training, clinics, international experience and individual training.',
+    programsLead:'Four programs to keep improving: small-group training, individual sessions, holiday experiences and a program for international players.',
     programCards:[
       {
-        title:'Special One<br>Training',
-        text:'Permanent football development program during the season for players and goalkeepers who want to improve through specific sessions and small groups.',
-        list:['Weekly technical training','Individual correction','Groups by age, category and level'],
-        btns:['Training Form →','Ask questions']
+        title:'SO Training<br>Group',
+        text:"SO Training Grupal is the academy's permanent training program, with small-group sessions throughout the season.",
+        list:['Training throughout the season','Small groups by age, category and level','Individual feedback','A demanding, close environment'],
+        btns:['Request information','WhatsApp']
       },
       {
-        title:'Special One<br>Experience',
-        text:'Multi-day football clinics and sports events organized during holidays, long weekends, festive periods or special dates.',
-        list:['Specific training sessions','Competitions and dynamics','Individual corrections'],
-        btns:['Next registrations →','Ask about clinics']
+        title:'SO Training<br>Individual',
+        text:"SO Training Individual is the academy's individual training program, for players and goalkeepers who want a personalized approach adapted to their needs.",
+        list:['Individual or highly personal sessions','For players and goalkeepers','Work adapted to age, level, position and goals','Direct feedback throughout the session'],
+        btns:['Request information','WhatsApp']
       },
       {
-        title:'Special One<br>International Experience',
-        text:'Football training experience in Seville for international players who want to train, compete and discover Spanish football from the inside.',
-        list:['Personalized experience','Individual and group sessions','Private league match'],
-        btns:['International Form →','Talk to us']
+        title:'SO<br>Experience',
+        text:"SO Experience brings together the academy's clinics and training events during holidays and special dates.",
+        list:['Training clinics and events','Targeted training','Games and activities adapted to players','Individual feedback'],
+        btns:['Request information','WhatsApp']
       },
       {
-        title:'Special One<br>Individual Training',
-        text:'Fully personalized training sessions for players and goalkeepers looking for specific improvement.',
-        list:['100% personalized training','Position-specific work','60 or 90 minute sessions'],
-        btns:['Individual Form →','Check availability']
+        title:'SO International<br>Experience',
+        text:'SO International Experience is a program for international players who want a training experience within Spanish football.',
+        list:['A personal experience in Seville','Individual sessions and group training','Assessment by academy coaches','Shared learning in Spanish football'],
+        btns:['Request information','WhatsApp']
       }
     ],
     values:[
@@ -178,7 +173,7 @@ const SOA_I18N = {
     methods:[
       ['Close correction','We observe technical and behavioral details in the game to support the player throughout the improvement process.'],
       ['Purposeful repetition','We design tasks to improve technical execution, coordination and confidence without turning training into empty exercises.'],
-      ['Adapted intensity','The level of difficulty is adapted to the player’s age, category, level and objectives to generate real progress.'],
+      ['Adapted intensity','The level of difficulty is adapted to the player’s age, category, level and objectives.'],
       ['Learning through experience','Training, competing, making mistakes, correcting and trying again. That is the base of our methodology.']
     ],
     galleryEyebrow:'Gallery',
@@ -187,9 +182,9 @@ const SOA_I18N = {
     contactEyebrow:'Contact',
     contactTitle:'Contact us',
     contactLead:'Tell us which program you are interested in and we will guide you toward the best option for the player.',
-    formLabels:['Name','Phone','Email','Program','Message'],
-    formPlaceholders:['Your name','+34...','your@email.com','Tell us the player age, category and what you need.'],
-    formOptions:['Special One Training','Special One Experience','Special One International Experience','Special One Individual Training','General enquiry'],
+    formLabels:['Name','Program','Message'],
+    formPlaceholders:['Your name','Tell us the player age, category and what you need.'],
+    formOptions:['SO Training Grupal','SO Training Individual','SO Experience','SO International Experience','General enquiry'],
     formBtn:'Send enquiry via WhatsApp →',
     footer:'© Special One Academy · Asociación Deportiva Andalucía Activa',
     legal:['Legal notice','Privacy','Cookies','Terms'],
@@ -197,7 +192,7 @@ const SOA_I18N = {
     chatbotSub:'I can help you with quick questions',
     chatbotIntro:'What do you need information about?',
     quick:['Available programs','Schedules and groups','Location','Individual Training','International Experience','Clinics and events','Talk on WhatsApp'],
-    chatPlaceholder:'Write your message...',
+    chatPlaceholder:'Write your message…',
     cookiesTitle:'Cookies',
     cookiesText:'We use technical and analytics cookies to improve your browsing experience. You can accept or reject their use.',
     cookiesBtns:['Accept','Reject','View policy']
@@ -215,7 +210,6 @@ function applySOALanguage(lang){
   $$('.links a').forEach((a,i)=>{if(t.nav[i])setText(a,t.nav[i]);});
   setText($('.nav-cta'), t.navCta);
   setText($('.lang'), t.lang);
-  setText($('.hero .eyebrow'), t.heroEyebrow);
   setHTML($('.hero h1'), t.heroTitle);
   setText($('.hero-copy p'), t.heroText);
   $$('.hero-actions .btn').forEach((a,i)=>setText(a,t.heroBtns[i]));
@@ -273,10 +267,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 
-setTimeout(function(){
+(function(){
   const banner = document.getElementById('season-floating-banner');
   if (banner && !localStorage.getItem('seasonBannerClosedV14')) banner.classList.add('show');
-}, 900);
+})();
 
 document.getElementById('season-close')?.addEventListener('click', function(){
   document.getElementById('season-floating-banner')?.classList.remove('show');
