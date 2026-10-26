@@ -20,14 +20,22 @@
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/so.css">
+<link rel="preload" as="image" href="../assets/img/web/portada-800.webp" imagesrcset="../assets/img/web/portada-480.webp 480w, ../assets/img/web/portada-800.webp 800w, ../assets/img/web/portada-1920.webp 1376w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../assets/so.css?v=2">
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag("consent","default",{analytics_storage:"denied",ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"});
 try{if(localStorage.getItem("soaCookies")==="accepted"){gtag("consent","update",{analytics_storage:"granted"});}}catch(e){}
 gtag("js",new Date());gtag("config","G-HH45EVVGY7");
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HH45EVVGY7"></script>
+<script>
+window.addEventListener("load", function () {
+  var s = document.createElement("script");
+  s.src = "https://www.googletagmanager.com/gtag/js?id=G-HH45EVVGY7";
+  s.async = true;
+  document.head.appendChild(s);
+});
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SportsOrganization","name":"Special One Academy","sport":"Soccer","url":"https://www.academiaspecialone.es/","telephone":"+34614806029","email":"info@academiaspecialone.es","address":{"@type":"PostalAddress","addressLocality":"Mairena del Aljarafe","addressRegion":"Sevilla","addressCountry":"ES"}}
 </script>
@@ -61,7 +69,7 @@ gtag("js",new Date());gtag("config","G-HH45EVVGY7");
 <main id="contenido">
   <section class="inicio" aria-labelledby="titulo">
     <picture class="fondo">
-      <source type="image/webp" srcset="../assets/img/web/portada-800.webp 800w, ../assets/img/web/portada-1376.webp 1376w" sizes="100vw">
+      <source type="image/webp" srcset="../assets/img/web/portada-480.webp 480w, ../assets/img/web/portada-800.webp 800w, ../assets/img/web/portada-1920.webp 1376w" sizes="100vw">
       <img src="../assets/img/web/portada-1376.jpg" alt="Special One Academy player running during a training session" width="1376" height="768" fetchpriority="high">
     </picture>
     <svg class="pizarra" viewBox="0 0 520 420" aria-hidden="true">
@@ -111,7 +119,7 @@ gtag("js",new Date());gtag("config","G-HH45EVVGY7");
         </div>
       </div>
       <div class="movil">
-        <div class="carcasa"><video id="video-manager" src="../assets/special-one-manager.mp4" poster="../assets/manager-poster.jpg" muted loop playsinline preload="metadata" aria-label="Special One Manager presentation video"></video></div>
+        <div class="carcasa"><video id="video-manager" data-mp4="../assets/special-one-manager.mp4" data-webm="../assets/special-one-manager.webm" poster="../assets/manager-poster.webp" muted loop playsinline preload="none" aria-label="Special One Manager presentation video"></video></div>
         <div class="controles"><button class="btn btn-linea" type="button" id="ver-pantalla-completa">Watch with sound</button></div>
       </div>
     </div>
@@ -289,6 +297,6 @@ gtag("js",new Date());gtag("config","G-HH45EVVGY7");
 </div>
 
 <script src="../assets/so-config.js"></script>
-<script src="../assets/so.js" defer></script>
+<script src="../assets/so.js?v=2" defer></script>
 </body>
 </html>

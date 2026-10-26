@@ -74,13 +74,40 @@
     });
   }
 
-  /* Vídeo de Manager */
+  /* Vídeo de Manager: carga perezosa al acercarse a la pantalla */
   var video = $("#video-manager");
   if (video) {
     var reducir = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reducir) { video.muted = true; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    var cargado = false;
+    var cargarVideo = function () {
+      if (cargado) return;
+      cargado = true;
+      if (video.dataset.webm) {
+        var webm = document.createElement("source");
+        webm.src = video.dataset.webm; webm.type = "video/webm";
+        video.appendChild(webm);
+      }
+      if (video.dataset.mp4) {
+        var mp4 = document.createElement("source");
+        mp4.src = video.dataset.mp4; mp4.type = "video/mp4";
+        video.appendChild(mp4);
+      }
+      video.load();
+      if (!reducir) { video.muted = true; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    };
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) { cargarVideo(); io.disconnect(); }
+        });
+      }, { rootMargin: "200px" });
+      io.observe(video);
+    } else {
+      cargarVideo();
+    }
     var full = $("#ver-pantalla-completa");
     if (full) full.addEventListener("click", function () {
+      cargarVideo();
       if (video.requestFullscreen) video.requestFullscreen();
       else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
       video.muted = false; video.play();
