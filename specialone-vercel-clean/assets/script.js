@@ -116,15 +116,15 @@ const SOA_I18N = {
   en: {
     htmlLang: 'en',
     title: 'Special One Academy | Football training academy in Seville',
-    description: 'Special One Academy is a football training academy in Seville for players and goalkeepers from Pre-Benjamin to Juvenil. Training, clinics and international experiences.',
+    description: 'Special One Academy is a football training academy in Seville for players and goalkeepers from U7 to U19. Training, clinics and international experiences.',
     nav: ['About Us','Methodology','Programs','Gallery','Contact'],
     navCta: 'Contact us',
     lang: 'EN⌄',
-    heroTitle: 'Football training academy in Seville',
+    heroTitle: 'Football technical training academy in Seville',
     heroText: 'Specific training, close attention and qualified coaches to complement the work the player does at their club.',
     heroBtns: ['See programs','Talk on WhatsApp'],
     features: [
-      ['From Pre-Benjamin to Juvenil','Programs adapted to every stage.'],
+      ['From U7 to U19','Programs adapted to every stage.'],
       ['Players and goalkeepers','Specific work for each profile.'],
       ['Small groups','Individual attention in every session.']
     ],
@@ -138,7 +138,7 @@ const SOA_I18N = {
     programCards:[
       {
         title:'SO Training<br>Group',
-        text:"SO Training Group is the academy's permanent training program, with small-group sessions throughout the season.",
+        text:"SO Training Grupal is the academy's permanent training program, with small-group sessions throughout the season.",
         list:['Training throughout the season','Small groups by age, category and level','Individual feedback','A demanding, close environment'],
         btns:['Request information','WhatsApp']
       },
@@ -157,7 +157,7 @@ const SOA_I18N = {
       {
         title:'SO International<br>Experience',
         text:'SO International Experience is a program for international players who want a training experience within Spanish football.',
-        list:['A personal experience in Sevilla','Individual sessions and group training','Assessment by academy coaches','Shared learning in Spanish football'],
+        list:['A personal experience in Seville','Individual sessions and group training','Assessment by academy coaches','Shared learning in Spanish football'],
         btns:['Request information','WhatsApp']
       }
     ],
@@ -184,7 +184,7 @@ const SOA_I18N = {
     contactLead:'Tell us which program you are interested in and we will guide you toward the best option for the player.',
     formLabels:['Name','Program','Message'],
     formPlaceholders:['Your name','Tell us the player age, category and what you need.'],
-    formOptions:['SO Training Group','SO Training Individual','SO Experience','SO International Experience','General enquiry'],
+    formOptions:['SO Training Grupal','SO Training Individual','SO Experience','SO International Experience','General enquiry'],
     formBtn:'Send enquiry via WhatsApp →',
     footer:'© Special One Academy · Asociación Deportiva Andalucía Activa',
     legal:['Legal notice','Privacy','Cookies','Terms'],
