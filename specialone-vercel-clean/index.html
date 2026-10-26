@@ -12,6 +12,9 @@
 <meta content="Academia de tecnificación de fútbol en Sevilla para jugadores, jugadoras y porteros. Entrenamientos en grupos reducidos, sesiones individuales, clinics y experiencias internacionales." name="description"/>
 <meta content="index, follow" name="robots"/>
 <link href="https://www.academiaspecialone.es/" rel="canonical"/>
+<link href="https://www.academiaspecialone.es/" hreflang="es" rel="alternate"/>
+<link href="https://www.academiaspecialone.es/en/" hreflang="en" rel="alternate"/>
+<link href="https://www.academiaspecialone.es/" hreflang="x-default" rel="alternate"/>
 <meta content="Special One Academy | Academia de fútbol en Sevilla" property="og:title"/>
 <meta content="Tecnificación, entrenamientos individuales, clinics y experiencias internacionales para futbolistas y porteros en Sevilla." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -37,10 +40,10 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="assets/site-system.css?v=1" rel="stylesheet"/>
+<link as="font" crossorigin="" href="assets/fonts/barlow-condensed-700.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="assets/fonts/inter-variable.woff2" rel="preload" type="font/woff2"/>
+<link href="assets/tokens.css?v=1" rel="stylesheet"/>
+<link href="assets/site-system.css?v=2" rel="stylesheet"/>
 <script async="" src="https://tally.so/widgets/embed.js"></script>
 <script>
 document.addEventListener("tally-form-submitted", function(e) {
@@ -70,13 +73,15 @@ gtag("config", "G-HH45EVVGY7");
 <a data-en="Contact" data-es="Contacto" href="#contacto">Contacto</a>
 <a data-en="Special One Manager" data-es="Special One Manager" href="/special-one-manager.html">Special One Manager</a></nav>
 <div class="nav-actions">
-<button aria-label="Cambiar idioma" class="lang" type="button">ES⌄</button>
+<a aria-label="View in English" class="lang" href="/en/">EN</a>
 <a class="nav-cta" data-en="Contact us" data-es="Contacta con nosotros" href="#contacto">Contacta con nosotros</a>
 <button aria-controls="site-menu" aria-expanded="false" aria-label="Abrir menú" class="mobile-toggle" type="button">☰</button>
 </div>
 </header>
-<div id="season-floating-banner" role="region"><div class="season-bar"><button class="season-cta" data-en="Enrollment open in SO Training · Request a place →" data-es="Inscripciones abiertas en SO Training · Solicitar plaza →" onclick="openTally('NpMjqB')" type="button">Inscripciones abiertas en SO Training · Solicitar plaza →</button><button aria-label="Cerrar aviso" id="season-close" type="button">×</button></div></div>
-<section aria-labelledby="hero-title" class="hero"><div class="hero-stage container"><div class="hero-photo"><img alt="Jugador de Special One Academy durante un entrenamiento" fetchpriority="high" height="1440" src="assets/img/hero.jpg" width="1920"/></div><div class="hero-copy"><div class="hero-brandline" data-en="SPECIAL ONE ACADEMY · WORK TO TALENT" data-es="SPECIAL ONE ACADEMY · WORK TO TALENT">SPECIAL ONE ACADEMY · WORK TO TALENT</div><h1 data-en="Football technical training academy in Seville" data-es="Academia de tecnificación de fútbol en Sevilla" id="hero-title">Academia de tecnificación de fútbol en Sevilla</h1><p data-en="Specific training, close attention and qualified coaches to complement the work the player does at their club." data-es="Entrenamiento específico, atención cercana y entrenadores cualificados para complementar el trabajo que el futbolista hace en su club.">Entrenamiento específico, atención cercana y entrenadores cualificados para complementar el trabajo que el futbolista hace en su club.</p><div class="hero-actions"><a class="btn" data-en="See programs" data-es="Ver programas" href="#programas">Ver programas</a><a class="btn secondary" data-en="Talk on WhatsApp" data-es="Hablar por WhatsApp" href="https://wa.me/34614806029" rel="noopener" target="_blank">Hablar por WhatsApp</a></div></div><aside aria-labelledby="hero-manager-title" class="hero-manager"><div class="eyebrow" data-en="AVAILABLE FROM NOVEMBER 1" data-es="DISPONIBLE A PARTIR DEL 1 DE NOVIEMBRE">DISPONIBLE A PARTIR DEL 1 DE NOVIEMBRE</div><h2 data-en="Special One Manager, the academy's app for families" data-es="Special One Manager, la app de la academia para las familias" id="hero-manager-title">Special One Manager, la app de la academia para las familias</h2><div class="video-shell"><video aria-label="Vídeo de presentación de Special One Manager" class="manager-film" controls="" playsinline="" poster="assets/manager-poster.jpg" preload="metadata"><source src="assets/special-one-manager.mp4" type="video/mp4"/></video></div><p data-en="Check training sessions and request bookings from your phone. And if you book your SO Training Grupal bundles through the app, each session costs less." data-es="Consulta entrenamientos y solicita reservas desde el móvil. Y si reservas tus bonos de SO Training Grupal desde la app, cada sesión te sale más barata.">Consulta entrenamientos y solicita reservas desde el móvil. Y si reservas tus bonos de SO Training Grupal desde la app, cada sesión te sale más barata.</p><a class="btn hero-manager-cta" data-en="Discover Special One Manager →" data-es="Conocer Special One Manager →" href="/special-one-manager.html">Conocer Special One Manager →</a></aside></div></section>
+<div class="page-top-spacer">
+<div id="season-floating-banner" role="region"><div class="season-bar container"><button class="season-cta" data-en="Enrollment open in SO Training · Request a place →" data-es="Inscripciones abiertas en SO Training · Solicitar plaza →" onclick="openTally('NpMjqB')" type="button">Inscripciones abiertas en SO Training · Solicitar plaza →</button><button aria-label="Cerrar aviso" id="season-close" type="button">×</button></div></div>
+<section aria-labelledby="hero-title" class="hero"><div class="hero-stage container"><div class="hero-photo"><picture><source media="(max-width:860px)" srcset="assets/img/hero-800.webp" type="image/webp"/><source srcset="assets/img/hero.webp" type="image/webp"/><img alt="Jugador de Special One Academy durante un entrenamiento" fetchpriority="high" height="768" src="assets/img/hero.jpg" width="1376"/></picture></div><div class="hero-copy"><div class="hero-brandline" data-en="SPECIAL ONE ACADEMY · WORK TO TALENT" data-es="SPECIAL ONE ACADEMY · WORK TO TALENT">SPECIAL ONE ACADEMY · WORK TO TALENT</div><h1 data-en="Football technical training academy in Seville" data-es="Academia de tecnificación de fútbol en Sevilla" id="hero-title">Academia de tecnificación de fútbol en Sevilla</h1><p data-en="Specific training, close attention and qualified coaches to complement the work the player does at their club." data-es="Entrenamiento específico, atención cercana y entrenadores cualificados para complementar el trabajo que el futbolista hace en su club.">Entrenamiento específico, atención cercana y entrenadores cualificados para complementar el trabajo que el futbolista hace en su club.</p><div class="hero-actions"><a class="btn" data-en="See programs" data-es="Ver programas" href="#programas">Ver programas</a><a class="btn secondary" data-en="Talk on WhatsApp" data-es="Hablar por WhatsApp" href="https://wa.me/34614806029" rel="noopener" target="_blank">Hablar por WhatsApp</a></div></div><aside aria-labelledby="hero-manager-title" class="hero-manager"><div class="eyebrow" data-en="AVAILABLE FROM NOVEMBER 1" data-es="DISPONIBLE A PARTIR DEL 1 DE NOVIEMBRE">DISPONIBLE A PARTIR DEL 1 DE NOVIEMBRE</div><h2 data-en="Special One Manager, the academy's app for families" data-es="Special One Manager, la app de la academia para las familias" id="hero-manager-title">Special One Manager, la app de la academia para las familias</h2><a aria-label="Ver el vídeo de presentación en la página de Special One Manager" class="hero-manager-preview" href="/special-one-manager.html"><picture><source srcset="assets/manager-preview.webp" type="image/webp"/><img alt="Vista previa de la aplicación Special One Manager" decoding="async" height="1280" loading="lazy" src="assets/manager-preview.jpg" width="720"/></picture><span class="hero-manager-play" aria-hidden="true">▶</span></a><p data-en="Check training sessions and request bookings from your phone. And if you book your SO Training Grupal bundles through the app, each session costs less." data-es="Consulta entrenamientos y solicita reservas desde el móvil. Y si reservas tus bonos de SO Training Grupal desde la app, cada sesión te sale más barata.">Consulta entrenamientos y solicita reservas desde el móvil. Y si reservas tus bonos de SO Training Grupal desde la app, cada sesión te sale más barata.</p><a class="btn hero-manager-cta" data-en="Discover Special One Manager →" data-es="Conocer Special One Manager →" href="/special-one-manager.html">Conocer Special One Manager →</a></aside></div></section>
+</div>
 <div class="launch-trust container"> <div class="hero-feature">
 <div class="icon-box">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-8 0v2"></path><circle cx="12" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M2 21v-2a4 4 0 0 1 3-3.87"></path></svg>
@@ -109,7 +114,7 @@ gtag("config", "G-HH45EVVGY7");
 <section class="section" id="quienes">
 <div class="container about-wrap">
 <div class="media-card reveal">
-<img alt="Entrenamiento en grupo Special One Academy" decoding="async" loading="lazy" src="assets/img/about.jpg"/>
+<picture><source srcset="assets/img/about.webp" type="image/webp"/><img alt="Entrenamiento en grupo Special One Academy" decoding="async" height="768" loading="lazy" src="assets/img/about.jpg" width="1376"/></picture>
 </div>
 <div class="glass-card reveal">
 <div class="eyebrow">Quiénes somos</div>
@@ -134,7 +139,7 @@ gtag("config", "G-HH45EVVGY7");
 <div class="program-copy"><h3>SO Training<br/>Grupal</h3>
 <div class="eyebrow" data-en="SO Training · Group training" data-es="SO Training · Tecnificación grupal">SO Training · Tecnificación grupal</div>
 <p data-en="SO Training Grupal is the academy's permanent training program, with small-group sessions throughout the season." data-es="SO Training Grupal es el programa de tecnificación permanente de la academia, con entrenamientos en grupos reducidos durante la temporada.">SO Training Grupal es el programa de tecnificación permanente de la academia, con entrenamientos en grupos reducidos durante la temporada.</p><div class="program-img">
-<img alt="SO Training Grupal" decoding="async" loading="lazy" src="assets/img/training-web.svg"/>
+<picture><source srcset="assets/img/training-700.webp 700w, assets/img/training.webp 1024w" type="image/webp"/><img alt="SO Training Grupal" decoding="async" height="1024" loading="lazy" src="assets/img/training.jpg" width="1024"/></picture>
 </div>
 <ul class="check-list">
 <li data-en="Training throughout the season" data-es="Tecnificación durante la temporada">Tecnificación durante la temporada</li>
@@ -142,7 +147,7 @@ gtag("config", "G-HH45EVVGY7");
 <li data-en="Individual feedback" data-es="Corrección individualizada">Corrección individualizada</li>
 <li data-en="A demanding, close environment" data-es="Entorno exigente y cercano">Entorno exigente y cercano</li>
 </ul>
-<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="The aim is to complement club training, reinforcing technical, tactical, physical and mental aspects of the player." data-es="El objetivo es complementar el trabajo de los clubes, reforzando aspectos técnicos, tácticos, físicos y mentales del futbolista.">El objetivo es complementar el trabajo de los clubes, reforzando aspectos técnicos, tácticos, físicos y mentales del futbolista.</p></details><a class="program-kit-link" data-en="Official kit →" data-es="Equipación oficial →" href="#equipacion">Equipación oficial →</a><div class="program-actions">
+<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="The aim is to complement club training, reinforcing technical, tactical, physical and mental aspects of the player." data-es="El objetivo es complementar el trabajo de los clubes, reforzando aspectos técnicos, tácticos, físicos y mentales del futbolista.">El objetivo es complementar el trabajo de los clubes, reforzando aspectos técnicos, tácticos, físicos y mentales del futbolista.</p></details><a class="program-page-link" data-en="View program →" data-es="Ver programa →" href="/programas/so-training-grupal.html">Ver programa →</a><a class="program-kit-link" data-en="Official kit →" data-es="Equipación oficial →" href="#equipacion">Equipación oficial →</a><div class="program-actions">
 <button class="small-btn" data-en="Request information" data-es="Solicitar información" onclick="openTally('NpMjqB')">Solicitar información</button>
 <a class="small-btn dark" data-en="WhatsApp" data-es="WhatsApp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Training%20Grupal" rel="noopener" target="_blank">WhatsApp</a>
 </div>
@@ -152,7 +157,7 @@ gtag("config", "G-HH45EVVGY7");
 <div class="program-copy"><h3>SO Training<br/>Individual</h3>
 <div class="eyebrow" data-en="SO Training · Individual training" data-es="SO Training · Modalidad individual">SO Training · Modalidad individual</div>
 <p data-en="SO Training Individual is the academy's individual training program, for players and goalkeepers who want a personalized approach adapted to their needs." data-es="SO Training Individual es el programa de entrenamientos individuales de la academia, dirigido a jugadores, jugadoras y porteros que buscan un trabajo personalizado y adaptado a sus necesidades.">SO Training Individual es el programa de entrenamientos individuales de la academia, dirigido a jugadores, jugadoras y porteros que buscan un trabajo personalizado y adaptado a sus necesidades.</p><div class="program-img">
-<img alt="SO Training Individual" decoding="async" loading="lazy" src="assets/img/individual-training-web.svg"/>
+<picture><source srcset="assets/img/hero2-700.webp 700w, assets/img/hero2.webp 1376w" type="image/webp"/><img alt="SO Training Individual" decoding="async" height="768" loading="lazy" src="assets/img/hero2.jpg" width="1376"/></picture>
 </div>
 <ul class="check-list">
 <li data-en="Individual or highly personal sessions" data-es="Sesiones individuales o muy personalizadas">Sesiones individuales o muy personalizadas</li>
@@ -160,7 +165,7 @@ gtag("config", "G-HH45EVVGY7");
 <li data-en="Work adapted to age, level, position and goals" data-es="Trabajo adaptado por edad, nivel, posición y objetivos">Trabajo adaptado por edad, nivel, posición y objetivos</li>
 <li data-en="Direct feedback throughout the session" data-es="Corrección directa durante toda la sesión">Corrección directa durante toda la sesión</li>
 </ul>
-<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="Each session focuses on specific goals: technique, decisions, coordination, striking, control, dribbling, finishing or position-specific skills." data-es="Cada sesión se centra en objetivos concretos: técnica, toma de decisiones, coordinación, golpeo, control, conducción, finalización o aspectos específicos de la posición.">Cada sesión se centra en objetivos concretos: técnica, toma de decisiones, coordinación, golpeo, control, conducción, finalización o aspectos específicos de la posición.</p></details><a class="program-kit-link" data-en="Official kit →" data-es="Equipación oficial →" href="#equipacion">Equipación oficial →</a><div class="program-actions">
+<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="Each session focuses on specific goals: technique, decisions, coordination, striking, control, dribbling, finishing or position-specific skills." data-es="Cada sesión se centra en objetivos concretos: técnica, toma de decisiones, coordinación, golpeo, control, conducción, finalización o aspectos específicos de la posición.">Cada sesión se centra en objetivos concretos: técnica, toma de decisiones, coordinación, golpeo, control, conducción, finalización o aspectos específicos de la posición.</p></details><a class="program-page-link" data-en="View program →" data-es="Ver programa →" href="/programas/so-training-individual.html">Ver programa →</a><a class="program-kit-link" data-en="Official kit →" data-es="Equipación oficial →" href="#equipacion">Equipación oficial →</a><div class="program-actions">
 <button class="small-btn" data-en="Request information" data-es="Solicitar información" onclick="openTally('lbxql6')">Solicitar información</button>
 <a class="small-btn dark" data-en="WhatsApp" data-es="WhatsApp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Training%20Individual" rel="noopener" target="_blank">WhatsApp</a>
 </div>
@@ -170,7 +175,7 @@ gtag("config", "G-HH45EVVGY7");
 <div class="program-copy"><h3>SO<br/>Experience</h3>
 <div class="eyebrow" data-en="Holiday clinics and training events" data-es="Clinics y experiencias formativas en vacaciones">Clinics y experiencias formativas en vacaciones</div>
 <p data-en="SO Experience brings together the academy's clinics and training events during holidays and special dates." data-es="SO Experience reúne los clinics y eventos formativos de la academia durante vacaciones y fechas señaladas.">SO Experience reúne los clinics y eventos formativos de la academia durante vacaciones y fechas señaladas.</p><div class="program-img">
-<img alt="SO Experience" decoding="async" loading="lazy" src="assets/img/experience2.jpg?v=14.1"/>
+<picture><source srcset="assets/img/experience2-700.webp 700w, assets/img/experience2.webp 1376w" type="image/webp"/><img alt="SO Experience" decoding="async" height="768" loading="lazy" src="assets/img/experience2.jpg" width="1376"/></picture>
 </div>
 <ul class="check-list">
 <li data-en="Training clinics and events" data-es="Clinics y eventos formativos">Clinics y eventos formativos</li>
@@ -178,7 +183,7 @@ gtag("config", "G-HH45EVVGY7");
 <li data-en="Games and activities adapted to players" data-es="Competiciones y dinámicas adaptadas">Competiciones y dinámicas adaptadas</li>
 <li data-en="Individual feedback" data-es="Correcciones individualizadas">Correcciones individualizadas</li>
 </ul>
-<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="Multi-day experiences where players train and learn together in small groups, with specific tasks, games and individual feedback adapted to each stage." data-es="Son experiencias de varios días en las que los futbolistas entrenan y aprenden juntos en grupos reducidos, con tareas específicas, competiciones y correcciones individualizadas adaptadas a cada etapa.">Son experiencias de varios días en las que los futbolistas entrenan y aprenden juntos en grupos reducidos, con tareas específicas, competiciones y correcciones individualizadas adaptadas a cada etapa.</p></details><div class="program-actions">
+<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="Multi-day experiences where players train and learn together in small groups, with specific tasks, games and individual feedback adapted to each stage." data-es="Son experiencias de varios días en las que los futbolistas entrenan y aprenden juntos en grupos reducidos, con tareas específicas, competiciones y correcciones individualizadas adaptadas a cada etapa.">Son experiencias de varios días en las que los futbolistas entrenan y aprenden juntos en grupos reducidos, con tareas específicas, competiciones y correcciones individualizadas adaptadas a cada etapa.</p></details><a class="program-page-link" data-en="View program →" data-es="Ver programa →" href="/programas/so-experience.html">Ver programa →</a><div class="program-actions">
 <a class="small-btn" data-en="Request information" data-es="Solicitar información" href="#contacto">Solicitar información</a>
 <a class="small-btn dark" data-en="WhatsApp" data-es="WhatsApp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20Experience" rel="noopener" target="_blank">WhatsApp</a>
 </div>
@@ -188,7 +193,7 @@ gtag("config", "G-HH45EVVGY7");
 <div class="program-copy"><h3>SO International<br/>Experience</h3>
 <div class="eyebrow" data-en="Football development in Spain for international players" data-es="Formación en España para futbolistas internacionales">Formación en España para futbolistas internacionales</div>
 <p data-en="SO International Experience is a program for international players who want a training experience within Spanish football." data-es="SO International Experience es un programa dirigido a futbolistas internacionales que quieren vivir una experiencia formativa dentro del fútbol español.">SO International Experience es un programa dirigido a futbolistas internacionales que quieren vivir una experiencia formativa dentro del fútbol español.</p><div class="program-img">
-<img alt="SO International Experience" decoding="async" loading="lazy" src="assets/img/international.jpg?v=14.0"/>
+<picture><source srcset="assets/img/international-700.webp 700w, assets/img/international.webp 1024w" type="image/webp"/><img alt="SO International Experience" decoding="async" height="1024" loading="lazy" src="assets/img/international.jpg" width="1024"/></picture>
 </div>
 <ul class="check-list">
 <li data-en="A personal experience in Seville" data-es="Experiencia personalizada en Sevilla">Experiencia personalizada en Sevilla</li>
@@ -196,7 +201,7 @@ gtag("config", "G-HH45EVVGY7");
 <li data-en="Assessment by academy coaches" data-es="Evaluación por entrenadores de la academia">Evaluación por entrenadores de la academia</li>
 <li data-en="Shared learning in Spanish football" data-es="Convivencia y aprendizaje en entorno futbolístico español">Convivencia y aprendizaje en entorno futbolístico español</li>
 </ul>
-<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="Over several days, players train and are assessed by academy coaches through individual sessions, group training and matches adapted to their level." data-es="Durante varios días, los futbolistas entrenan y son evaluados por entrenadores de la academia a través de sesiones individuales, entrenamientos colectivos y partidos adaptados a su nivel.">Durante varios días, los futbolistas entrenan y son evaluados por entrenadores de la academia a través de sesiones individuales, entrenamientos colectivos y partidos adaptados a su nivel.</p></details><div class="program-actions">
+<details class="program-detail"><summary data-en="About this program" data-es="Conoce el programa">Conoce el programa</summary><p data-en="Over several days, players train and are assessed by academy coaches through individual sessions, group training and matches adapted to their level." data-es="Durante varios días, los futbolistas entrenan y son evaluados por entrenadores de la academia a través de sesiones individuales, entrenamientos colectivos y partidos adaptados a su nivel.">Durante varios días, los futbolistas entrenan y son evaluados por entrenadores de la academia a través de sesiones individuales, entrenamientos colectivos y partidos adaptados a su nivel.</p></details><a class="program-page-link" data-en="View program →" data-es="Ver programa →" href="/programas/so-international-experience.html">Ver programa →</a><div class="program-actions">
 <button class="small-btn" data-en="Request information" data-es="Solicitar información" onclick="openTally('pbREOV')">Solicitar información</button>
 <a class="small-btn dark" data-en="WhatsApp" data-es="WhatsApp" href="https://wa.me/34614806029?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20SO%20International%20Experience" rel="noopener" target="_blank">WhatsApp</a>
 </div>
@@ -256,11 +261,11 @@ gtag("config", "G-HH45EVVGY7");
 <p class="lead">Imágenes reales de sesiones, clinics y experiencias de Special One Academy.</p>
 </div>
 <div class="gallery-grid reveal">
-<img alt="Entrenamiento Special One Academy" decoding="async" loading="lazy" src="assets/img/gallery1.jpg"/>
-<img alt="Tecnificación en grupo Special One Academy" decoding="async" loading="lazy" src="assets/img/gallery2.jpg"/>
-<img alt="Sesión de fútbol Special One Academy" decoding="async" loading="lazy" src="assets/img/gallery3.jpg"/>
-<img alt="Jugadores entrenando en Special One Academy" decoding="async" loading="lazy" src="assets/img/gallery4.jpg"/>
-<img alt="Experiencia formativa Special One Academy" decoding="async" loading="lazy" src="assets/img/gallery5.jpg"/>
+<picture><source srcset="assets/img/gallery1.webp" type="image/webp"/><img alt="Entrenamiento Special One Academy" decoding="async" height="768" loading="lazy" src="assets/img/gallery1.jpg" width="1376"/></picture>
+<picture><source srcset="assets/img/gallery2.webp" type="image/webp"/><img alt="Tecnificación en grupo Special One Academy" decoding="async" height="768" loading="lazy" src="assets/img/gallery2.jpg" width="1376"/></picture>
+<picture><source srcset="assets/img/gallery3.webp" type="image/webp"/><img alt="Sesión de fútbol Special One Academy" decoding="async" height="768" loading="lazy" src="assets/img/gallery3.jpg" width="1376"/></picture>
+<picture><source srcset="assets/img/gallery4.webp" type="image/webp"/><img alt="Jugadores entrenando en Special One Academy" decoding="async" height="768" loading="lazy" src="assets/img/gallery4.jpg" width="1376"/></picture>
+<picture><source srcset="assets/img/gallery5.webp" type="image/webp"/><img alt="Experiencia formativa Special One Academy" decoding="async" height="768" loading="lazy" src="assets/img/gallery5.jpg" width="1376"/></picture>
 </div>
 </div>
 </section>
