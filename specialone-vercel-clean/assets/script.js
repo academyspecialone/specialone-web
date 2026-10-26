@@ -45,7 +45,7 @@ const SOA_I18N = {
     lang: 'ES⌄',
     heroEyebrow: 'Academia de tecnificación en Sevilla',
     heroTitle: 'Entrena con nosotros.<br><span class="gold">Reserva desde tu móvil.</span>',
-    heroText: 'Mejora tu fútbol con entrenadores cualificados. Instala gratis Special One Manager para consultar sesiones y gestionar las reservas de tu familia.',
+    heroText: 'Mejora tu fútbol con entrenadores cualificados. Instala gratis Special One Manager para consultar sesiones y reservar las sesiones de tus futbolistas.',
     heroBtns: ['INSTALA LA APP GRATIS ↗','DESCUBRE LOS PROGRAMAS ↓'],
     features: [
       ['Desde prebenjamín hasta juvenil','Programas adaptados a cada etapa formativa.'],
@@ -69,11 +69,11 @@ const SOA_I18N = {
       {
         title:'Special One<br>Experience',
         text:'Clinics y eventos deportivos de varios días, organizados durante vacaciones, puentes, festivos o fechas especiales.',
-        list:['Entrenamientos específicos','Competiciones y dinámicas','Correcciones individualizadas'],
+        list:['Entrenamientos específicos','Competiciones y dinámicas','Correcciones individualizadas','Trabajo adaptado a cada etapa'],
         btns:['Próximas inscripciones →','Consultar clinics']
       },
       {
-        title:'International<br>Experience',
+        title:'Special One<br>International Experience',
         text:'Experiencia formativa en Sevilla para futbolistas internacionales que quieren entrenar, competir y conocer el fútbol español desde dentro.',
         list:['Experiencia personalizada','Sesiones individuales y grupales','Partido en ligas privadas'],
         btns:['Formulario International →','Hablar con nosotros']
@@ -130,7 +130,7 @@ const SOA_I18N = {
     lang: 'EN⌄',
     heroEyebrow: 'Football training academy in Seville',
     heroTitle: 'Train with us.<br><span class="gold">Book from your phone.</span>',
-    heroText: 'Improve your football with qualified coaches. Install Special One Manager for free to check sessions and manage your family’s bookings.',
+    heroText: 'Improve your football with qualified coaches. Install Special One Manager for free to check sessions and book sessions for your players.',
     heroBtns: ['INSTALL THE APP FOR FREE ↗','EXPLORE OUR PROGRAMS ↓'],
     features: [
       ['From Pre-Benjamin to Juvenil','Programs adapted to every development stage.'],
@@ -158,7 +158,7 @@ const SOA_I18N = {
         btns:['Next registrations →','Ask about clinics']
       },
       {
-        title:'International<br>Experience',
+        title:'Special One<br>International Experience',
         text:'Football training experience in Seville for international players who want to train, compete and discover Spanish football from the inside.',
         list:['Personalized experience','Individual and group sessions','Private league match'],
         btns:['International Form →','Talk to us']
@@ -235,7 +235,7 @@ function applySOALanguage(lang){
     const p=t.programCards[i]; if(!p) return;
     setHTML(card.querySelector('h3'),p.title);
     setText(card.querySelector('p'),p.text);
-    card.querySelectorAll('li').forEach((li,j)=>setText(li,p.list[j]));
+    card.querySelectorAll('.check-list li').forEach((li,j)=>{if(p.list[j])setText(li,p.list[j]);});
     card.querySelectorAll('.program-actions button,.program-actions a').forEach((b,j)=>setText(b,p.btns[j]));
   });
   $$('.value').forEach((card,i)=>{setText(card.querySelector('h4'),t.values[i]?.[0]);setText(card.querySelector('p'),t.values[i]?.[1]);});
