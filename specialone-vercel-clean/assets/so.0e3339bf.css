@@ -109,7 +109,7 @@ p{margin:0 0 var(--s2);max-width:62ch;text-wrap:pretty}
 .ventajas span{color:var(--tiza);font-size:var(--t-sm)}
 
 /* Secciones */
-.seccion{padding-block:clamp(72px,10vw,128px);overflow:hidden}
+.seccion{padding-block:clamp(72px,10vw,128px);overflow-x:clip}
 .cabeza{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);align-items:end;margin-bottom:clamp(40px,6vw,72px)}
 .cabeza p{margin:0;color:var(--tiza);font-size:var(--t-md);line-height:1.5}
 
@@ -353,7 +353,7 @@ body.cookies-visibles .wa-flotante{bottom:20px}
 body{background:#050505 var(--grano)}
 
 /* Portada a pantalla completa */
-.inicio{position:relative;min-height:min(92vh,880px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.inicio{position:relative;min-height:min(92vh,880px);display:flex;align-items:flex-end;overflow-x:clip;isolation:isolate}
 .inicio .fondo{position:absolute;inset:0;z-index:-2}
 .inicio .fondo img{width:100%;height:100%;object-fit:cover;object-position:62% 40%}
 .inicio::before{content:"";position:absolute;inset:0;z-index:-1;background:
@@ -379,7 +379,7 @@ body{background:#050505 var(--grano)}
 }
 
 /* Presentación de Special One Manager */
-.escaparate{position:relative;overflow:hidden;background:var(--brillo-amarillo),linear-gradient(180deg,#050505 0%,#0d0c08 50%,#050505 100%);border-top:1px solid var(--borde-luz);border-bottom:1px solid var(--borde-luz)}
+.escaparate{position:relative;overflow-x:clip;background:var(--brillo-amarillo),linear-gradient(180deg,#050505 0%,#0d0c08 50%,#050505 100%);border-top:1px solid var(--borde-luz);border-bottom:1px solid var(--borde-luz)}
 .escaparate .contenedor{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(40px,6vw,96px);align-items:center;padding-block:clamp(80px,10vw,140px)}
 .escaparate .estado-app{margin-bottom:var(--s3)}
 .escaparate h2{font-size:clamp(3rem,6.4vw,6rem);font-weight:900;line-height:.94}
