@@ -14,7 +14,7 @@
       ]
     },
     {
-      "source": "/assets/so-config\\.[0-9a-f]+\\.js",
+      "source": "/assets/so-config.(.*).js",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache" }
       ]
