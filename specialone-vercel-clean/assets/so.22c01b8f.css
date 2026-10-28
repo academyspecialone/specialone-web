@@ -496,3 +496,17 @@ body{background:#050505 var(--grano)}
   .deco-jugada,.deco-formacion,.deco-flecha-inst{display:none}
   .deco-campo,.deco-campo-app{width:110vw;opacity:.6}
 }
+
+/* Acceso a Special One Manager */
+.menu a.btn-app{color:var(--blanco);border-color:rgba(239,208,106,.75);white-space:nowrap}
+.menu a.btn-app:hover{color:var(--amarillo);border-color:var(--amarillo);background:rgba(239,208,106,.08)}
+.btn-app-movil{display:none}
+.fotos-ficha picture{display:block}
+.menu a{white-space:nowrap}
+@media (min-width:1081px) and (max-width:1200px){.menu{gap:14px}.menu .btn{padding:10px 14px}}
+@media (max-width:340px){.cabecera a.btn-app-movil{font-size:.75rem;padding:4px 8px}.marca img{height:36px}}
+@media (min-width:1081px) and (max-width:1380px){.menu > a[href$="#manager"],.menu > a[href$="special-one-manager.html"]:not(.btn){display:none}}
+@media (max-width:1080px){
+  .cabecera a.btn-app-movil{display:inline-flex;margin-left:auto;max-width:168px;min-height:44px;padding:6px 12px;font-size:.8125rem;line-height:1.2;text-align:center;color:var(--blanco);border-color:rgba(239,208,106,.75)}
+  .cabecera .contenedor{gap:12px}
+}
